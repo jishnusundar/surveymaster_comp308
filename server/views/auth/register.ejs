@@ -1,0 +1,34 @@
+<% include ../partials/header.ejs %>
+
+
+ 
+<!-- Display flash messages  -->
+ 
+<div id ="reg_form">
+   <% if (messages.length > 0) { %>
+        <div class="alert alert-danger"><%= messages %></div>
+      <% } %>
+<img id="icon-img" src="/Assets/images/icon.png" alt="">
+<form method="post">
+<div class"form-group">
+
+ <input type="email" class="form-control" id="input_email" name="email"placeholder="Enter your email id"><br>
+ <input type="text" class="form-control" id="input_username" name="displayName" placeholder="Enter your display name"><br>
+ <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password"><br>
+ <input type="Password" class="form-control" id="confirm_password" placeholder="Confirm password"><br>
+
+<input type="submit" class="form-control" id="submitButton" value="Register">
+
+
+
+</div>
+</form>
+
+
+
+
+
+</div>
+
+</body>
+ </html>
