@@ -8,11 +8,7 @@ let UserSchema = new Schema({
      type: String,
      default: '',
      trim: true, //string only
-<<<<<<< HEAD
      required: 'Display Name is required' //message to flash box 
-=======
-     required: 'Username is required' //message to flash box 
->>>>>>> master
  },
  
   password: {
@@ -26,24 +22,6 @@ let UserSchema = new Schema({
      default: '',
      trim: true, //string only
      required: 'Email is required' //message to flash box 
-<<<<<<< HEAD
-=======
- },
- displayName: {
-     type: String,
-     default: '',
-     trim: true, //string only
-     required: 'Display Name is required' //message to flash box 
-
- },
- created: {
-     type: Date,
-     default: Date.now
- },
- updated: {
-     type: Date,
-     default: Date.now
->>>>>>> master
  }
 },
 {

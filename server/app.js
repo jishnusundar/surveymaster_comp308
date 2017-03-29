@@ -34,10 +34,9 @@ db.once('open', () => {
 
 // define routers
 let index = require('./routes/index'); // top level routes
-<<<<<<< HEAD
+
 let users = require('./routes/users');
-=======
->>>>>>> master
+
 //let contacts = require('./routes/contacts'); // routes for games
 
 
@@ -71,10 +70,8 @@ app.use(passport.session());
 
 // route redirects
 app.use('/', index);
-<<<<<<< HEAD
 app.use('/users',users);
-=======
->>>>>>> master
+
 //app.use('/contacts', contacts);
 
 //Passport User Configuration
