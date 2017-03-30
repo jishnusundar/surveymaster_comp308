@@ -1,5 +1,9 @@
 module.exports.displayHome = (req,res,next) => {
-     res.render('home',{
-        title:"Welcome to Survey Master"
+     return res.render('home',{
+        title:"Welcome to Survey Master",
+        messages: req.flash('loginMessage')
     });
 }
+
+
+

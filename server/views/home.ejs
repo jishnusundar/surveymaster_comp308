@@ -1,44 +1,4 @@
-
-<!DOCTYPE html>
-<html lang = "en">
-  <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><%= title %></title>
-    <!--CSS -->
-        <link rel='stylesheet' href='/Scripts/lib/bootstrap/dist/css/bootstrap.min.css' />
-       <link rel='stylesheet' href='/Scripts/lib/bootstrap/dist/css/bootstrap-theme.min.css' />
-         <link rel='stylesheet' href='/Scripts/lib/font-awesome/css/font-awesome.min.css' />
-       <link rel='stylesheet' href='/Scripts/lib/font-awesome/scss/_variables.scss' />
-       <link rel="stylesheet" href="/node_modules/material-design-lite/material.min.css">
-       <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <script src="/node_modules/material-design-lite/material.min.js"></script>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel='stylesheet' href='/Content/register.css' />
-       <link rel='stylesheet' href='/Content/header.css' />
-       <link rel='stylesheet' href='/Content/footer.css' />
-       <link rel='stylesheet' href='/Content/home.css' />
-
-       <body>
-       <div class="header-wrapper">
-            <div class="header">
-                <div id ="logoImage">
-        <img src="/Assets/images/logo.png" alt="logo"> </img>
-                </div>
-                <div id="div_navbar" >
-        
-        <ul class="nav navbar-nav navbar-right navbar-fixed">     <!--navigation section of the page -->
-
-            <li><a href="/">Home</a></li>
-            <li><a href = "/about"> About us</a></li>
-            <li><a href = "/projects"> Contact Us</a></li>
-            <li><a href = "/register"> Register</a></li>
-
-        </ul>
-                </div>
-            </div>
-       </div>
-         <div id="stickyalias"></div>
+<% include ./partials/header.ejs %>
 
 <div id="body-wrapper" class="body-warapper">
 <div class="main-body">
@@ -47,7 +7,7 @@
 
 <form method="post">
                 <fieldset class="form-group">
-                    <label>Email:</label>
+                    <label>Username:</label>
                     <input type="text" class="input-field" name="username" required autofocus/>
         
                     <label>Password:</label>
@@ -55,6 +15,9 @@
                     <input type="submit" class="submit"  value="Log In"/>
                     <a href="/">
                     </form>
+                    <% if (messages.length > 0) { %>
+        <div class="alert alert-danger"><%= messages %></div>
+      <% } %>
 </div>
 <div class="w3-row-padding w3-theme">
 
@@ -82,19 +45,6 @@ in the Riviera of La Spezia. It is the northernmost village of the Cinque Terre.
 <br><br><br>
 </div>
 </div>
-<div class="footer-wrapper">
-    <div class="footer">
-        <h5>All rights reserved ©</h5>
-</div>
-</div>
 
-</div>
-<!--Scripts -->
-<script src ="/Scripts/lib/jquery/dist/jquery.min.js"></script>
-<script src ="/Scripts/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src ="/Scripts/app.js"></script>
-
-</body>
-</html>
-
+<% include ./partials/footer.ejs %>
       

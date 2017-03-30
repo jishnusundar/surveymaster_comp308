@@ -15,7 +15,7 @@ module.exports.displayRegister = (req,res,next) => {
 module.exports.processRegister = (req,res,next) => {
       User.register(
     new User({
-        username: req.body.displayName,
+        username: req.body.username,
         password: req.body.password,
         email: req.body.email,
         
