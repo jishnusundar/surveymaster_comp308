@@ -5,16 +5,43 @@
     background-color: #979990;
     margin-left: 500px;
     margin-right: auto;
-     margin-top: 150px;
+     margin-top: 50px;
     position: absolute;
-    clear: none;
+    font-family: "Bookman Old Style";
+    
 }
-form{
-    margin-top: 200px;
+.form_control{
+   margin-bottom: 20px; 
+   border-radius: 5px;
+   
+}
+.register_form{
+    margin-top: 50px;
+    margin-left: 100px;
 }
 #icon-img{
     width: 75px;
     height: 75px;
     margin-left: 150px; ;
-    margin-right: auto;
+    
+}
+
+h3{
+
+    margin-left: 100px;
+    font-family: "Bookman Old Style";
+}
+
+#submit_Button{
+   margin-top: 10px;
+   margin-left: 5px;
+  background-color:  #403f3f;
+padding: 10px 22px;
+  border:none;
+  color: white;
+  border-radius: 4px;
+}
+
+#submit_Button:hover{
+    background-color:black;
 }
