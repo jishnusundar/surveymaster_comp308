@@ -14,7 +14,8 @@ let User = UserModel.User;
 router.get('/',(req,res,next) => {
    res.render('home',{
         title:"Welcome to Survey Master",
-        messages: req.flash('loginMessage')
+        messages: req.flash('loginMessage'),
+        user:req.user?req.user.username:''
     });
 });
 

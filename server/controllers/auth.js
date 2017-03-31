@@ -8,7 +8,8 @@ let User = UserModel.User;
 module.exports.displayRegister = (req,res,next) => {
     return res.render('auth/register.ejs',{
         title:'Register',
-        messages: req.flash('registerMessage')
+        messages: req.flash('registerMessage'),
+        user:req.user?req.user.username:''
     });
 }
 
@@ -29,7 +30,8 @@ module.exports.processRegister = (req,res,next) => {
           }
           return res.render('auth/register', {
             title: 'Register',
-              messages: req.flash('registerMessage')
+              messages: req.flash('registerMessage'),
+              user:req.user?req.user.username:''
             
           });
         }
