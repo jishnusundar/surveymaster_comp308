@@ -16,9 +16,14 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel='stylesheet' href='/Content/header.css' />
         <link rel='stylesheet' href='/Content/footer.css' />
-        <link rel='stylesheet' href='/Content/app.css' />
-        <!--<link rel='stylesheet' href='/Content/home.css' />
-        <link rel='stylesheet' href='/Content/register.css' />-->
+        <% if(title =="Your surveys") {%>
+         <link rel='stylesheet' href='/Content/app.css' />
+        <% } %>
+        <link rel='stylesheet' href='/Content/home.css' />
+        <link rel='stylesheet' href='/Content/register.css' />
+
+
+        
        <body>
        <div class="header-wrapper">
             <div class="header">
