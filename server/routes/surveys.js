@@ -1,10 +1,9 @@
 let express = require('express');
 let router = express.Router();
 
+let surveysController = require('../controllers/surveys');
 router.get('/userSurveyList',(req,res,next)=>{
-    res.render('surveys/userSurveyList',{
-        title:'Your surveys'
-    });
+   surveysController.displayUserSurveyPage(req,res,next);
 });
 
 module.exports = router;
