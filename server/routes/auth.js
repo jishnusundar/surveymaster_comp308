@@ -11,4 +11,9 @@ router.post('/register',(req,res,next)=> {
     authController.processRegister(req,res,next);
 });
 
+router.get('/logout',(req,res,next)=> {
+    req.logout();
+    res.redirect('/'); //redirect to home page
+})
+
 module.exports = router;
