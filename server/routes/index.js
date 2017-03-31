@@ -12,11 +12,20 @@ let User = UserModel.User;
 
 //Get the home page and render the login form
 router.get('/',(req,res,next) => {
-   res.render('home',{
+    if(req.user) //if user is already logged in
+    {
+       res.redirect('/survey/userSurveyList'); //redirect to users landing page (survey list page)
+    }
+    else //only if not logged in, show home page
+    {
+        res.render('home',{
         title:"Welcome to Survey Master",
         messages: req.flash('loginMessage'),
         user:req.user?req.user.username:''
     });
+
+    }
+   
 });
 
 

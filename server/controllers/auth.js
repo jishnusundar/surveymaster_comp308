@@ -5,6 +5,14 @@ let passport = require('passport');
 let UserModel = require('../models/users')
 let User = UserModel.User;
 
+module.exports.requireAuth=(req,res,next)=> {
+  //check if the user is logged index
+  if(!req.isAuthenticated()) {
+    return res.redirect('/');
+  }
+  next();
+}
+
 module.exports.displayRegister = (req,res,next) => {
     return res.render('auth/register.ejs',{
         title:'Register',
