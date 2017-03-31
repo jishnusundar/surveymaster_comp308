@@ -22,7 +22,7 @@ router.get('/',(req,res,next) => {
 
 //Process Login
 router.post('/', passport.authenticate('local', {
-successRedirect: '/auth/register',
+successRedirect: '/survey/userSurveyList',
 failureRedirect: '/',
 failureFlash: true
 }));
