@@ -7,7 +7,33 @@
     margin-top: 50px;
     font-family: "Bookman Old Style";
     display: block;
-    
+}
+
+.container_cap{
+   width: 60%;
+   background-color: #403f3f;
+   margin-left: 20%;
+   margin-right: 20%;
+   padding: 4px 4px 20px 4px;
+   margin-top: 50px;
+   color: #fff;
+}
+
+.text_description{
+    color: white;
+}
+.green_button{
+   width:220px;
+   margin-top: 10px;
+   margin-left: 70%;
+   background-color: #A2B736;
+   padding: 10px 22px;
+   border:none;
+   color: white;
+   border-radius: 4px;
+}
+.green_button:hover{
+    background-color:black;
 }
 .form_control{
     width:220px;
@@ -49,4 +75,12 @@ h3{
 .form_wrapper{
     width: 40%;
     margin: 0 30% 0 25%;
+}
+h2{
+    margin-top: 50px;
+    margin-left: 10px;;
+    margin-right: auto;
+    text-align: center;
+    font-family: "Bookman Old Style";
+    color: white;
 }
