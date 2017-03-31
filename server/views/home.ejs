@@ -1,6 +1,9 @@
 <% include ./partials/header.ejs %>
 
 <div id="body-wrapper" class="body-warapper">
+    <% if (messages.length > 0) { %>
+        <div class="alert alert-danger"><%= messages %></div>
+      <% } %>
 <div class="main-body">
 
 <h2> Join the Survey master to build a complete survey</h2>
@@ -15,9 +18,7 @@
                     <input type="submit" class="submit"  value="Log In"/>
                     <a href="/">
                     </form>
-                    <% if (messages.length > 0) { %>
-        <div class="alert alert-danger"><%= messages %></div>
-      <% } %>
+                
 </div>
 <div class="w3-row-padding w3-theme">
 

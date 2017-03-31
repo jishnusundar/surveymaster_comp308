@@ -12,8 +12,11 @@ let User = UserModel.User;
 
 //Get the home page and render the login form
 router.get('/',(req,res,next) => {
-   indexController.displayHome(req,res,next);
-})
+   res.render('home',{
+        title:"Welcome to Survey Master",
+        messages: req.flash('loginMessage')
+    });
+});
 
 
 //Process Login
