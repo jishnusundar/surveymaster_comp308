@@ -3,29 +3,29 @@
 
  
 <!-- Display flash messages  -->
-<div>
+<div id="body-wrapper" class="body-warapper">
  <% if (messages.length > 0) { %>
         <div class="alert alert-danger"><%= messages %></div>
       <% } %>
-<div id ="reg_form">
-   
-<img id="icon-img" src="/Assets/images/icon.png" alt="">
-<h3>Create an Account</h3>
-<form method="post" class="register_form">
-<div class="form-group">
+    <div id ="reg_form">
+    <div class="form_wrapper">
+    <img id="icon-img" src="/Assets/images/icon.png" alt="">
+    <h3>Create an Account</h3>
+    <form method="post" class="register_form">
+    <div class="form-group">
 
- <input type="email" class="form_control" id="input_email" name="email"placeholder="Enter your email id"><br>
- <input type="text" class="form_control" id="input_username" name="username" placeholder="Enter you Username"><br>
- <input type="password" class="form_control" id="password" name="password" placeholder="Enter Password"><br>
- <input type="Password" class="form_control" id="confirm_password" placeholder="Confirm password"><br>
-<input type="submit" class="" id="submit_Button" value="Create an account">
+        <input type="email" class="form_control" id="input_email" name="email"placeholder="Enter your email id"><br>
+        <input type="text" class="form_control" id="input_username" name="username" placeholder="Enter you Username"><br>
+        <input type="password" class="form_control" id="password" name="password" placeholder="Enter Password"><br>
+        <input type="Password" class="form_control" id="confirm_password" placeholder="Confirm password"><br>
+        <input type="submit" class="" id="submit_Button" value="Create an account">
 
-
+    </div>
+    </div>
+  </form>
 
 </div>
-</form>
 
-</div>
 </div>
 
 <% include ../partials/footer.ejs %>
