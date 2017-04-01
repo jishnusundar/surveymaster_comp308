@@ -88,7 +88,8 @@ passport.deserializeUser(User.deserializeUser());
   app.use(function(req, res) {
       res.status(400);
      res.render('errors/404',{
-      title: '404: File Not Found'
+      title: '404: File Not Found',
+      user:req.user?req.user.username:''
     });
   });
 
@@ -97,7 +98,8 @@ passport.deserializeUser(User.deserializeUser());
       res.status(500);
       res.render('errors/500', {
         title:'500: Internal Server Error',
-        error: error
+        error: error,
+        user:req.user?req.user.username:''
       });
   });
 
