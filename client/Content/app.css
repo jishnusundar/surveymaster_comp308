@@ -270,3 +270,16 @@ p{
 		margin-top:2%;
 		
 }
+
+
+
+.survey-container{
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: lightslategray;
+    padding: 10px;
+}
+.survey-form-list-control-content{
+    display: inline-block;
+}
