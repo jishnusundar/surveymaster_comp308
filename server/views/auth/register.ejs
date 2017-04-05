@@ -1,31 +1,60 @@
-<% include ../partials/header.ejs %>
+<% include ./partials/header.ejs %>
+<body>
 
-
- 
-<!-- Display flash messages  -->
-<div id="body-wrapper" class="body-warapper">
- <% if (messages.length > 0) { %>
+    
+<div class="outer-box">
+    <div class="page-header">
+    <h1>Survey Master</h1>
+    </div>
+    <!-- Render the Registration form  -->
+	<main class="outerbox">
+	<!-- Display flash messages  -->
+	<% if (messages.length > 0) { %>
         <div class="alert alert-danger"><%= messages %></div>
       <% } %>
-    <div id ="reg_form">
-    <div class="form_wrapper">
-    <img id="icon-img" src="/Assets/images/icon.png" alt="">
-    <h3>Create an Account</h3>
-    <form method="post" class="register_form">
-    <div class="form-group">
+		<div class="row">
+            <div class="col-md-offset-4 col-md-4">
+                <h1>User Registration</h1>
+                <form method="post">
+                    <fieldset class="form-group">
+                        <label for="email">Email: *</label>
+                        <input name="email" type="email" class="form-control" required autofocus />
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label for="username">Username: *</label>
+                        <input name="username" type="text" class="form-control" required />
+                    </fieldset>
+                     <fieldset class="form-group">
+                        <label for="displayName">Display Name: *</label>
+                        <input name="displayName" type="text" class="form-control" required />
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label for="password">Password: *</label>
+                        <input id="password" name="password" type="password" class="form-control" required />
+                    </fieldset>
+                     <fieldset class="form-group">
+                        <label for="password">Confirm Password: *</label>
+                        <input id="confirm_password" name="password" type="password" class="form-control" required />
+                    </fieldset>
+                   
+                    <fieldset class="form-group text-right">
+                        <input type="submit" id="submit_Button" class="btn btn-success" value="Submit"/>
+                        <a href="/">
+                            <input type="button" class="btn btn-warning" value="Cancel"/>
+                        </a>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
 
-        <input type="email" class="form_control" id="input_email" name="email"placeholder="Enter your email id"><br>
-        <input type="text" class="form_control" id="input_username" name="username" placeholder="Enter you Username"><br>
-        <input type="password" class="form_control" id="password" name="password" placeholder="Enter Password"><br>
-        <input type="Password" class="form_control" id="confirm_password" placeholder="Confirm password"><br>
-        <input type="submit" class="" id="submit_Button" value="Create an account">
-
-    </div>
-    </div>
-  </form>
-
+      
 </div>
 
-</div>
+</body>
 
-<% include ../partials/footer.ejs %>
+<% include ./partials/footer.ejs %>
+      
+
+       
+        
+        

@@ -1,51 +1,23 @@
 <% include ./partials/header.ejs %>
+<body>
 
-<div id="body-wrapper" class="body-warapper">
     <% if (messages.length > 0) { %>
         <div class="alert alert-danger"><%= messages %></div>
       <% } %>
-<div class="main-body">
 
-<h2> Join the Survey master to build a complete survey</h2>
+<div class="outer-box">
 
-<form method="post" class="login_form">
-                <fieldset class="form-group">
-                    <label>Username:</label>
-                    <input type="text" class="input-field" name="username" required autofocus/>
-        
-                    <label>Password:</label>
-                    <input type="password" class="input-field" name="password" required/>
-                    <input type="submit" class="submit"  value="Log In"/>
-                    <a href="/">
-                    </form>
-                
-</div>
-<div class="w3-row-padding w3-theme">
-
-<div class="w3-third w3-section">
-<div class="w3-card-4">
-<div class="w3-container w3-white">
-<h4>Cinque Terre</h4>
-<p>The Cinque Terre (five lands) is a portion of the Italian Riviera. The coastline with five villages: Monterosso, Vernazza, Corniglia, Manarola, and Riomaggiore
-is a UNESCO World Heritage Site.</p>
-</div>
-</div>
+    <div class="page-header">
+    <h1>Survey Master</h1>
+    </div>
+    <div class= "txt-description">
+    <p>Ask one person for advice, and it’s hard to know whether we should trust them. Ask a hundred, though, you’ll see a clearer picture start to come together.</p>
+    <p>Survey Master is a web application to build surveys to get your answers anytime. This web application helps the user to create survey according to the requirement and can view the results.</p></p>
+    </div> 
+  
 </div>
 
-<div id = "card2" class="w3-third w3-section">
-<div class="w3-card-4">
-<div class="w3-container w3-white">
-<h4>Monterosso</h4>
-<p>Monterosso al Mare is located at the center of a small natural gulf, protected by a small artificial reef,
-in the Riviera of La Spezia. It is the northernmost village of the Cinque Terre.</p>
-</div>
-</div>
-</div>
-
-
-<br><br><br>
-</div>
-</div>
+</body>
 
 <% include ./partials/footer.ejs %>
       
