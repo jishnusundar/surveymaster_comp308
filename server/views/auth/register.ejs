@@ -9,7 +9,7 @@
     <!-- Render the Registration form  -->
 	<main class="outerbox">
 	<!-- Display flash messages  -->
-	<% if (messages.length > 0) { %>
+	<% if (typeof(messages)== String && messages.length > 0) { %>
         <div class="alert alert-danger"><%= messages %></div>
       <% } %>
 		<div class="row">

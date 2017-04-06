@@ -7,6 +7,9 @@
     <h2>Login</h2>
     <div>
     <div class="row">
+    <% if (typeof(messages)== String && messages.length > 0) { %>
+        <div class="alert alert-danger"><%= messages %></div>
+      <% } %>
         <div class="col-md-offset-4 col-md-4">
            <form method="post">
                 <fieldset class="form-group">
