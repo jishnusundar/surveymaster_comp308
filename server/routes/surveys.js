@@ -19,7 +19,7 @@ router.get('/surveyTemplate',(req,res,next)=>{
    surveysController.displaySurveyTemplate(req,res,next);
 });
 
-router.get('/configureSurvey',(req,res,next)=>{
+router.get('/surveyConfig',(req,res,next)=>{
    surveysController.displaySurveyConfigurePage(req,res,next);
 });
 

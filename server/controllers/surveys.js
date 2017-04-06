@@ -13,7 +13,7 @@ module.exports.displaySurveyTemplate = (req,res,next) => {
 }
 
 module.exports.displaySurveyConfigurePage = (req,res,next) => {
-    return res.render('surveys/confirmSurvey',{
+    return res.render('surveys/surveyConfig',{
         title:'Configure your survey',
         user:req.user?req.user.username:''
     });
