@@ -23,11 +23,39 @@ module.exports.displaySurveyTemplate = (req,res,next) => {
        req.session.title = req.body.surveyTitle;
    req.session.surveyType = req.body.surveyType;
    req.session.lifeTime = req.body.lifeTime;
+var type = req.body.surveyType;
 
-  return res.render('surveys/surveyTemplate',{
+if(type == "Multiple Choice")
+{
+    return res.render('surveys/MCQsurveyTemplate',{
      title:'Customize your survey',
-     user:req.user?req.user.username:''
+     user:req.user?req.user.username:'',
+     surveyTitle: req.body.surveyTitle
+
    });
+}
+else if(type == "True or False")
+{
+
+}
+
+else if(type == "Q&A") 
+{
+
+}
+
+else 
+{
+    //No survey type selected
+}
+  
+}
+
+module.exports.viewMCQSurvey = (req,res,next) => {
+return res.render('surveys/viewMCQSurvey',{
+ title:'View Survey',
+        user:req.user?req.user.username:''
+});
 }
 
 module.exports.displaySurveyConfirmation = (req,res,next) => {

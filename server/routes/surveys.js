@@ -28,6 +28,10 @@ surveysController.displaySurveyTemplate(req,res,next);
 
 });
 
+router.get('/viewMCQSurvey',(req,res,next) => {
+surveysController.viewMCQSurvey(req,res,next);
+});
+
 router.get('/confirmSurvey',(req,res,next)=>{
    surveysController.displaySurveyConfirmation(req,res,next);
 });
@@ -35,5 +39,7 @@ router.get('/confirmSurvey',(req,res,next)=>{
 router.get('/surveyStats/:id',(req,res,next)=>{
    surveysController.displaySurveyStatistics(req,res,next,req.params.id);
 });
+
+
 
 module.exports = router;
