@@ -11,8 +11,12 @@ function requireAuth(req,res,next) {
     next();
 }
 
-router.get('/userSurveyList',requireAuth,(req,res,next)=>{
+router.get('/userSurveyList',(req,res,next)=>{
    surveysController.displayUserSurveyPage(req,res,next);
+});
+
+router.get('/surveyTemplate',(req,res,next)=>{
+   surveysController.displaySurveyTemplate(req,res,next);
 });
 
 module.exports = router;
