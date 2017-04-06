@@ -1,46 +1,36 @@
 <% include ../partials/header.ejs %>
 
-    <div class="outer-box">
-
-    <div class="page-header">
-    <h1>Welcome User</h1>
-    </div>
+ 
 
 
     <!--Survey List-->
     <div class="survey-container">
-    <h3>My Survey List</h3>
-    <div class="survey-form-list-control">
-    <!---Create Survey Button-->
-    <button type="button" class="btn btn-default btn-lg btn-block myButton">Create a new Survey</button>
-    </div>
+    <h3>Setup Survey</h3>
+   
     <form>
     <!--List 1-->
     <div class="survey-form-list-control">
-        <div class="survey-form-list-control-listNum">1</div>
+    <div></div>
         
-         <div class="survey-form-list-control-label">Patient Survey </div>
-       
-         <div class="survey-form-list-control-buttons right-position">
-         <a class="btn btn-default" href="#" role="button">View</a>
-         <a class="btn btn-default" href="#" role="button">Edit</a>
-         <a class="btn btn-default" href="#" role="button">Del</a>
-         <a class="btn btn-default" href="#" role="button">Link</a>
+         <div class="survey-form-list-control-label">Survey Name : </div>
+         <div class="survey-form-list-control-label">
+         <input name="surveyTitle" type = "text" class ="form-control">
          </div>
-    </div>
-     <!--List 2-->
-     <div class="survey-form-list-control">
-        <div class="survey-form-list-control-listNum">2</div>
+         <br><br>   
 
-        <div class="survey-form-list-control-label">Centennial College Student Survey</div>
+  <div class="survey-form-list-control-label">Choose Type: </div>
+         <div class="survey-form-list-control-label">
+      <select name ="surveyType" class="form-control survey-form-list-control" id="sel1">
+          <option > Select Type</option>
+    <option value="Multiple Choice"> Multiple Choice</option>
+    <option value="True or False">True or False</option>
+    <option value="Q&A">Q&A</option>
 
-        <div class="survey-form-list-control-buttons right-position">
-         <a class="btn btn-default" href="#" role="button">View</a>
-         <a class="btn btn-default" href="#" role="button">Edit</a>
-         <a class="btn btn-default " href="#" role="button">Del</a>
-         <a class="btn btn-default" href="#" role="button">Link</a>
-         </div>
+  </select>
     </div>
+    </div>
+<div class="survey-form-list-control-buttons"> <input type = "submit" class ="form-control btn btn-default right-position survey-form-list-control-buttons" value="Next"></div>
+
     
 
     </form>
