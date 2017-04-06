@@ -11,3 +11,24 @@ module.exports.displaySurveyTemplate = (req,res,next) => {
         user:req.user?req.user.username:''
     });
 }
+
+module.exports.displaySurveyConfigurePage = (req,res,next) => {
+    return res.render('surveys/confirmSurvey',{
+        title:'Configure your survey',
+        user:req.user?req.user.username:''
+    });
+}
+
+module.exports.displaySurveyConfirmation = (req,res,next) => {
+    return res.render('surveys/confirmSurvey',{
+        title:'Confirm your survey',
+        user:req.user?req.user.username:''
+    });
+}
+
+module.exports.displaySurveyStatistics = (req,res,next,id) => {
+    return res.render('surveys/surveyStats',{
+        title:'Your survey Statistics',
+        user:req.user?req.user.username:''
+    });
+}

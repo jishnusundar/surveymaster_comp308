@@ -19,4 +19,16 @@ router.get('/surveyTemplate',(req,res,next)=>{
    surveysController.displaySurveyTemplate(req,res,next);
 });
 
+router.get('/configureSurvey',(req,res,next)=>{
+   surveysController.displaySurveyConfigurePage(req,res,next);
+});
+
+router.get('/confirmSurvey',(req,res,next)=>{
+   surveysController.displaySurveyConfirmation(req,res,next);
+});
+
+router.get('/surveyStats/:id',(req,res,next)=>{
+   surveysController.displaySurveyStatistics(req,res,next,req.params.id);
+});
+
 module.exports = router;
