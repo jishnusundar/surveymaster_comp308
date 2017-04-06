@@ -295,6 +295,9 @@ p{
 .survey-form-list-control-text{
   display: inline;
 }
+.survey-form-list-control-text-break{
+  display: inline-block;
+}
 
 .survey-form-list-control-buttons{
   display: inline-block;
@@ -343,7 +346,8 @@ p{
 	top:1px;
 }
 
-.add-Option-onclickShow{
+.question-break{
     padding: 10px;
     background-color: #f1f1f1;
+    margin-bottom: 2%;
 }
