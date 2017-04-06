@@ -20,8 +20,8 @@ router.get('/',(req,res,next) => {
     {
         res.render('home',{
         title:"Welcome to Survey Master",
-        messages: req.flash('loginMessage'),
-        user:req.user?req.user.username:''
+        user:req.user?req.user.username:'',
+        messages:''
     });
 
     }
@@ -29,11 +29,6 @@ router.get('/',(req,res,next) => {
 });
 
 
-//Process Login
-router.post('/', passport.authenticate('local', {
-successRedirect: '/survey/userSurveyList',
-failureRedirect: '/',
-failureFlash: true
-}));
+
 
 module.exports = router;

@@ -31,8 +31,16 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse purpleColor" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="/login">Log in</a></li>
-              <li><a href="/register">Create account</a></li>
+
+            <% if(typeof user == 'string' && user) { %>
+            <li><a href="">Welcome, <%= user %></a></li>
+            <li><a href="auth/logout">Log Out</a></li>
+            <% } else { %>
+            <li><a href="auth/login">Log in</a></li>
+            <li><a href="auth/register">Create account</a></li>
+            <% } %>
+
+
                 </ul>
           </div>
           </div>

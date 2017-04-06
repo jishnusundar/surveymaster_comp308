@@ -5,6 +5,16 @@ let passport = require('passport');
 let UserModel = require('../models/users')
 let User = UserModel.User;
 
+module.exports.displayLogin = (req,res,next) => {
+  return res.render('auth/login',{
+title:'Login',
+messages: req.flash('loginMessage'),
+        user:req.user?req.user.username:''
+  });
+}
+
+
+
 module.exports.requireAuth=(req,res,next)=> {
   //check if the user is logged index
   if(!req.isAuthenticated()) {
@@ -46,7 +56,7 @@ module.exports.processRegister = (req,res,next) => {
         // if registration is successful
         return passport.authenticate('local')(req, res, ()=>{
             console.log("Registration Successful");
-           res.redirect('/');
+           res.redirect('/survey/userSurveyList');
         });
       });
 }
