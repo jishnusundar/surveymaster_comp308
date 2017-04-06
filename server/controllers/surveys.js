@@ -19,6 +19,17 @@ module.exports.displaySurveyConfigurePage = (req,res,next) => {
     });
 }
 
+module.exports.displaySurveyTemplate = (req,res,next) => {
+       req.session.title = req.body.surveyTitle;
+   req.session.surveyType = req.body.surveyType;
+   req.session.lifeTime = req.body.lifeTime;
+
+  return res.render('surveys/surveyTemplate',{
+     title:'Customize your survey',
+     user:req.user?req.user.username:''
+   });
+}
+
 module.exports.displaySurveyConfirmation = (req,res,next) => {
     return res.render('surveys/confirmSurvey',{
         title:'Confirm your survey',

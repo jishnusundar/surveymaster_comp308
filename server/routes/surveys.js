@@ -23,6 +23,11 @@ router.get('/surveyConfig',(req,res,next)=>{
    surveysController.displaySurveyConfigurePage(req,res,next);
 });
 
+router.post('/surveyConfig',(req,res,next)=>{
+surveysController.displaySurveyTemplate(req,res,next);
+
+});
+
 router.get('/confirmSurvey',(req,res,next)=>{
    surveysController.displaySurveyConfirmation(req,res,next);
 });
