@@ -292,6 +292,10 @@ p{
 .survey-form-list-control-label{
   display: inline-block;
 }
+.survey-form-list-control-text{
+  display: inline;
+}
+
 .survey-form-list-control-buttons{
   display: inline-block;
 }
@@ -337,4 +341,9 @@ p{
 .myButton:active {
 	position:relative;
 	top:1px;
+}
+
+.add-Option-onclickShow{
+    padding: 10px;
+    background-color: #f1f1f1;
 }
