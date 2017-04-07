@@ -48,6 +48,14 @@ router.post('/MCQSurveyTemplate',(req,res,next) => {
   surveysController.processMCQSurvey(req,res,next);
 });
 
+router.get('/editMCQSurvey/:id',(req,res,next) => {
+surveysController.displaMCQEditPage(req,res,next,req.params.id);
+});
+
+router.post('/editMCQSurvey/:id',(req,res,next) => {
+surveysController.processMCQSurveyEdit(req,res,next,req.params.id);
+});
+
 router.get('/viewMCQSurvey/:id',(req,res,next) => {
 surveysController.viewMCQSurvey(req,res,next,req.params.id);
 });
@@ -60,6 +68,8 @@ router.get('/surveyStats/:id',(req,res,next)=>{
    surveysController.displaySurveyStatistics(req,res,next,req.params.id);
 });
 
-
+router.get('/tfViewSurvey',(req,res,next) => {
+  surveysController.displayTFViewPage(req,res,next);
+})
 
 module.exports = router;

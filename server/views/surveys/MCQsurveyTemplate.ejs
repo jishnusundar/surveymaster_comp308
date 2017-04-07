@@ -5,7 +5,7 @@
  
 <!--Survey Name(from connfigureSurvey Page-->
     <div class="survey-container">
-    <h3><%= surveyTitle %></h3><!--dynamic data-->
+    <h3><% if(title == "Edit Survey") { surveys.title } else { surveyTitle } %></h3><!--dynamic data-->
 
     <form method="post">
 
