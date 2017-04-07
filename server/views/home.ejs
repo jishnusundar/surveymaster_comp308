@@ -30,7 +30,11 @@
                     <img class="img-responsive" src="/Assets/images/nopic.jpg" data-toggle="tooltip" data-placement="top" alt="Basic product catalogue" title="Basic product catalogue"/>
                     <div class="overlay">
                     <h2>Get your answers today!!</h2>
-                    <a class="info" href="">Create Survey</a>
+                    <a class="info" href="<% if(typeof user == 'string' && user) { %>
+                    /survey/surveyConfig
+                    <% } else { %>
+                    /auth/login
+                    <% } %>">Create Survey</a>
                     </div>
     </div>
     </div>
