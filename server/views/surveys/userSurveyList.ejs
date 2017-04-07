@@ -5,7 +5,10 @@
     <div class="page-header">
     <h1>Welcome <%= user %></h1>
     </div>
-
+    
+    <% {
+        var sIds = []
+    }%>
 
     <!--Survey List-->
     <div class="survey-container">
@@ -17,7 +20,7 @@
     <form>
 
     <!--List of surveys-->
-<% for (let count = 0; count < surveys.length; count++) { %>
+<% for (let count = 0; count < surveys.length; count++) { sIds[count] = surveys[count]._id %>
 
     <div class="survey-form-list-control my-div-hover">
         <div class="survey-form-list-control-listNum"><%= count+1 %></div>
