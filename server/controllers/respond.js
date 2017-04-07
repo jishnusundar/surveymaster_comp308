@@ -52,12 +52,17 @@ let newResponse = response({
 });
 
 response.create(newResponse, (err, resp) => {
-      if(err) {
+
+     if(err) {
         console.log("ERROR creating response!!!: "+err);
        return res.end(err);
       } else {
           console.log("Response created successfully");
-        return res.redirect('/respond/thankYou');
+        setTimeout(redirectHome,2000);
+
+        function redirectHome() {
+          return res.redirect('/');
+        }
       }
     });
 
