@@ -66,7 +66,8 @@ module.exports.displayMCQSurveyTemplate = (req,res,next) => {
     return res.render('surveys/MCQsurveyTemplate',{
      title:'Customize your survey',
      user:req.user?req.user.username:'',
-     surveyTitle: req.session.surveyTitle
+     surveyTitle: req.session.surveyTitle,
+     surveys:''
 
    });
    
@@ -206,7 +207,7 @@ module.exports.displayTFSurveyTemplate = (req,res,next) => {
 }
 
 module.exports.displayTextSurveyTemplate = (req,res,next) => {
-    return res.render('surverys/textSurveyTemplate',{
+    return res.render('surveys/textSurveyTemplate',{
         title:'Your survey',
         user:req.user?req.user.username:''
     });
