@@ -17,7 +17,7 @@ module.exports.displayResponsePage = (req,res,next,id) => {
         } else {
           // show the survey's response view
 return res.render('surveys/respondMCQ',{
- title: surveys.title,
+ title: 'Respond to survey',
         user:req.user?req.user.username:'',
         surveys: surveys
 });
