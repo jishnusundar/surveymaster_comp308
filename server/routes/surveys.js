@@ -11,68 +11,68 @@ function requireAuth(req,res,next) {
     next();
 }
 
-router.get('/userSurveyList',(req,res,next)=>{
+router.get('/userSurveyList',requireAuth,(req,res,next)=>{
    surveysController.displayUserSurveyPage(req,res,next);
 });
 
-router.get('/surveyTemplate',(req,res,next)=>{
+router.get('/surveyTemplate',requireAuth,(req,res,next)=>{
    surveysController.displaySurveyTemplate(req,res,next);
 });
 
-router.get('/surveyConfig',(req,res,next)=>{
+router.get('/surveyConfig',requireAuth,(req,res,next)=>{
    surveysController.displaySurveyConfigurePage(req,res,next);
 });
 
-router.post('/surveyConfig',(req,res,next)=>{
+router.post('/surveyConfig',requireAuth,(req,res,next)=>{
 surveysController.displaySurveyTemplate(req,res,next);
 
 });
 
-router.get('/tfSurveyTemplate', (req,res,next) => {
+router.get('/tfSurveyTemplate',requireAuth, (req,res,next) => {
   surveysController.displayTFSurveyTemplate(req,res,next);
 });
 
-router.get('/textSurveyTemplate',(req,res,next) => {
+router.get('/textSurveyTemplate',requireAuth,(req,res,next) => {
 surveysController.displayTextSurveyTemplate(req,res,next);
 });
 
-router.get('/textViewSurvey',(req,res,next) => {
+router.get('/textViewSurvey',requireAuth,(req,res,next) => {
   surveysController.textViewSurvey(req,res,next);
 })
 
-router.get('/MCQSurveyTemplate',(req,res,next) => {
+router.get('/MCQSurveyTemplate',requireAuth,(req,res,next) => {
   surveysController.displayMCQSurveyTemplate(req,res,next);
 });
 
-router.post('/MCQSurveyTemplate',(req,res,next) => {
+router.post('/MCQSurveyTemplate',requireAuth,(req,res,next) => {
   surveysController.processMCQSurvey(req,res,next);
 });
 
-router.get('/editMCQSurvey/:id',(req,res,next) => {
+router.get('/editMCQSurvey/:id',(requireAuth,req,res,next) => {
 surveysController.displaMCQEditPage(req,res,next,req.params.id);
 });
 
-router.post('/editMCQSurvey/:id',(req,res,next) => {
+router.post('/editMCQSurvey/:id',requireAuth,(req,res,next) => {
 surveysController.processMCQSurveyEdit(req,res,next,req.params.id);
 });
 
-router.get('/viewMCQSurvey/:id',(req,res,next) => {
+router.get('/viewMCQSurvey/:id',requireAuth,(req,res,next) => {
 surveysController.viewMCQSurvey(req,res,next,req.params.id);
 });
 
-router.get('/confirmSurvey',(req,res,next)=>{
+router.get('/confirmSurvey',requireAuth,(req,res,next)=>{
    surveysController.displaySurveyConfirmation(req,res,next);
 });
 
-router.get('/surveyStats/:id',(req,res,next)=>{
+router.get('/surveyStats/:id',requireAuth,(req,res,next)=>{
    surveysController.displaySurveyStatistics(req,res,next,req.params.id);
 });
 
-router.get('/tfViewSurvey',(req,res,next) => {
+router.get('/tfViewSurvey',requireAuth,(req,res,next) => {
   surveysController.displayTFViewPage(req,res,next);
 });
 
-router.get('/delete/:id',(req,res,next) => {
+router.get('/delete/:id',requireAuth,(req,res,next) => {
   surveysController.deleteSurvey(req,res,next,req.params.id);
 });
 

@@ -152,7 +152,7 @@ module.exports.processMCQSurvey = (req,res,next) => {
        return res.end(err);
       } else {
           console.log("Survey created successfully");
-        return res.redirect('/survey/userSurveyList');
+        return res.redirect('/survey/viewMCQSurvey/'+mcqSurvey._id);
       }
     });
 }

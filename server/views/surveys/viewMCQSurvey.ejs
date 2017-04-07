@@ -6,13 +6,14 @@
 <!--Survey Name(from connfigureSurvey Page-->
     <div class="survey-container">
     <h3><%= surveys.title %></h3><!--dynamic data-->
+    <h5>Share your survey with the following link: surveymaster.herokuapp.com/respond/<%= surveys._id %></h5>
 
     <form method="post">
   <!--Go Back Button-->
         <div class="survey-form-list-control">
         <div class="survey-form-list-control-button">
          
-         <a class="btn btn-default" href="/survey/userSurveyList" role="button">Back</a>
+         <a class="btn btn-default" href="/survey/userSurveyList" role="button">My Home</a>
         </div>
         
         </div>
@@ -360,7 +361,7 @@
       <div class="survey-form-list-control">
        <div class="survey-form-list-control-button">
          
-         <a class="btn btn-default" href="/survey/userSurveyList" role="button">Back</a>
+         <a class="btn btn-default" href="/survey/userSurveyList" role="button">My Home</a>
         </div>
         
         </div>

@@ -3,7 +3,7 @@
     <div class="outer-box">
 
     <div class="page-header">
-    <h1>Welcome User</h1>
+    <h1>Welcome <%= user %></h1>
     </div>
 
 
@@ -28,7 +28,7 @@
          <a class="btn btn-default" href="/survey/viewMCQSurvey/<%= surveys[count]._id %>" role="button">View</a>
          <a class="btn btn-default" href="/survey/editMCQSurvey/<%= surveys[count]._id %>" role="button">Edit</a>
          <a class="btn btn-default" href="/survey/delete/<%= surveys[count]._id %>" role="button">Del</a>
-         <a class="btn btn-default" href="#" role="button">Share</a>
+         <a class="btn btn-default" href="/respond/<%= surveys[count]._id %>" role="button">Respond</a>
          </div>
     </div>
     
