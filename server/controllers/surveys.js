@@ -204,3 +204,10 @@ module.exports.displayTFSurveyTemplate = (req,res,next) => {
         user:req.user?req.user.username:''
     });
 }
+
+module.exports.displayTextSurveyTemplate = (req,res,next) => {
+    return res.render('surverys/textSurveyTemplate',{
+        title:'Your survey',
+        user:req.user?req.user.username:''
+    });
+}
