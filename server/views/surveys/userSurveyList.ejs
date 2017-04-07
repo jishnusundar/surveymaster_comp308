@@ -28,36 +28,13 @@
          <a class="btn btn-default" href="/survey/viewMCQSurvey/<%= surveys[count]._id %>" role="button">View</a>
          <a class="btn btn-default" href="/survey/editMCQSurvey/<%= surveys[count]._id %>" role="button">Edit</a>
          <a class="btn btn-default" href="/survey/delete/<%= surveys[count]._id %>" role="button">Del</a>
-         <a class="btn btn-default" href="" data-toggle="modal" data-target="#myModal" role="button">Share</a>
+         <a class="btn btn-default" href="/respond/<%= surveys[count]._id %>" role="button">Respond</a>
          </div>
-    </div>
-
-        <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Share Link</h4>
-        </div>
-        <div class="modal-body">
-          <p>Share your survey with the following link: surveymaster.herokuapp.com/respond/<%= surveys[count]._id %></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
     </div>
     
 <% } %>
-    </form> 
+    </form>
     </div>
-
- 
-  </div>    
     
     </div>
 
