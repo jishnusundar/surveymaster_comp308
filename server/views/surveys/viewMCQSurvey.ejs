@@ -5,7 +5,7 @@
  
 <!--Survey Name(from connfigureSurvey Page-->
     <div class="survey-container">
-    <h3>surveyTitle</h3><!--dynamic data-->
+    <h3><%= surveys.title %></h3><!--dynamic data-->
 
     <form method="post">
 
@@ -19,23 +19,23 @@
             <!--Label-->
             <div class="survey-form-list-control">
             <div class="survey-form-list-control-label" >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur in atque repellat optio iste adipisci facilis natus, eos recusandae tempore.
+            <%= surveys.questions.q1 %>
             </div>
         </div>
 
         <!--Radio Options-->
             <div class="survey-form-list-control">
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Amandeep
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q1o1 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Mekhal
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q1o2 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Jishnu
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q1o3 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Jishnu
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q1o4 %>
             </label>
         <!--/Radiobuttons-->
         </div>
@@ -53,23 +53,23 @@
             <!--Label-->
             <div class="survey-form-list-control">
             <div class="survey-form-list-control-label" >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse.
+            <%= surveys.questions.q2 %>
             </div>
-            </div>
+        </div>
 
         <!--Radio Options-->
             <div class="survey-form-list-control">
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Amandeep
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q2o1 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Mekhal
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q2o2 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Jishnu
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q2o3 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Jishnu
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q2o4 %>
             </label>
         <!--/Radiobuttons-->
         </div>
@@ -87,23 +87,23 @@
             <!--Label-->
             <div class="survey-form-list-control">
             <div class="survey-form-list-control-label" >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse.
+             <%= surveys.questions.q3 %>
             </div>
-            </div>
+        </div>
 
         <!--Radio Options-->
             <div class="survey-form-list-control">
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Amandeep
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q3o1 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Mekhal
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q3o2 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Jishnu
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q3o3 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Jishnu
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q3o4 %>
             </label>
         <!--/Radiobuttons-->
         </div>
@@ -121,23 +121,23 @@
             <!--Label-->
             <div class="survey-form-list-control">
             <div class="survey-form-list-control-label" >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse.
+           <%= surveys.questions.q4 %>
             </div>
-            </div>
+        </div>
 
         <!--Radio Options-->
             <div class="survey-form-list-control">
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Amandeep
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q4o1 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Mekhal
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q4o2 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Jishnu
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q4o3 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Jishnu
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q4o4 %>
             </label>
         <!--/Radiobuttons-->
         </div>
@@ -155,23 +155,23 @@
             <!--Label-->
             <div class="survey-form-list-control">
             <div class="survey-form-list-control-label" >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse.
+             <%= surveys.questions.q5 %>
             </div>
-            </div>
+        </div>
 
         <!--Radio Options-->
             <div class="survey-form-list-control">
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Amandeep
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q5o1 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Mekhal
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q5o2 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Jishnu
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q5o3 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Jishnu
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q5o4 %>
             </label>
         <!--/Radiobuttons-->
         </div>
@@ -189,23 +189,23 @@
             <!--Label-->
             <div class="survey-form-list-control">
             <div class="survey-form-list-control-label" >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse.
+             <%= surveys.questions.q6 %>
             </div>
-            </div>
+        </div>
 
         <!--Radio Options-->
             <div class="survey-form-list-control">
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Amandeep
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q6o1 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Mekhal
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q6o2 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Jishnu
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q6o3 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Jishnu
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q6o4 %>
             </label>
         <!--/Radiobuttons-->
         </div>
@@ -223,23 +223,23 @@
             <!--Label-->
             <div class="survey-form-list-control">
             <div class="survey-form-list-control-label" >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse.
+            <%= surveys.questions.q7 %>
             </div>
-            </div>
+        </div>
 
         <!--Radio Options-->
             <div class="survey-form-list-control">
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Amandeep
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q7o1 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Mekhal
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q7o2 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Jishnu
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q7o3 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Jishnu
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q7o4 %>
             </label>
         <!--/Radiobuttons-->
         </div>
@@ -257,23 +257,23 @@
             <!--Label-->
             <div class="survey-form-list-control">
             <div class="survey-form-list-control-label" >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse.
+             <%= surveys.questions.q8 %>
             </div>
-            </div>
+        </div>
 
         <!--Radio Options-->
             <div class="survey-form-list-control">
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Amandeep
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q8o1 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Mekhal
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q8o2 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Jishnu
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q8o3 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Jishnu
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q8o4 %>
             </label>
         <!--/Radiobuttons-->
         </div>
@@ -291,23 +291,23 @@
             <!--Label-->
             <div class="survey-form-list-control">
             <div class="survey-form-list-control-label" >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse.
+            <%= surveys.questions.q9 %>
             </div>
-            </div>
+        </div>
 
         <!--Radio Options-->
             <div class="survey-form-list-control">
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Amandeep
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q9o1 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Mekhal
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q9o2 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Jishnu
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q9o3 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Jishnu
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q9o4 %>
             </label>
         <!--/Radiobuttons-->
         </div>
@@ -325,23 +325,23 @@
             <!--Label-->
             <div class="survey-form-list-control">
             <div class="survey-form-list-control-label" >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse.
+             <%= surveys.questions.q10 %>
             </div>
-            </div>
+        </div>
 
         <!--Radio Options-->
             <div class="survey-form-list-control">
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Amandeep
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q10o1 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Mekhal
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q10o2 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Jishnu
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q10o3 %>
             </label>
             <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="" value="">Jishnu
+            <input type="radio" name="inlineRadioOptions" id="" value=""><%= surveys.questions.q10o4 %>
             </label>
         <!--/Radiobuttons-->
         </div>
