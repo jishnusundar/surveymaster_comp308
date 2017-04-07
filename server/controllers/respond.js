@@ -52,7 +52,8 @@ let newResponse = response({
 });
 
 response.create(newResponse, (err, resp) => {
-      if(err) {
+
+     if(err) {
         console.log("ERROR creating response!!!: "+err);
        return res.end(err);
       } else {
