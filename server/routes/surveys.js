@@ -34,6 +34,10 @@ router.get('/tfSurveyTemplate', (req,res,next) => {
 
 router.get('/textSurveyTemplate',(req,res,next) => {
 surveysController.displayTextSurveyTemplate(req,res,next);
+});
+
+router.get('/textViewSurvey',(req,res,next) => {
+  surveysController.textViewSurvey(req,res,next);
 })
 
 router.get('/MCQSurveyTemplate',(req,res,next) => {

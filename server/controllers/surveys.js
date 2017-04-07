@@ -212,3 +212,10 @@ module.exports.displayTextSurveyTemplate = (req,res,next) => {
         user:req.user?req.user.username:''
     });
 }
+
+module.exports.textViewSurvey = (req,res,next) => {
+    return res.render('surveys/textViewSurvey',{
+        title:'Your survey',
+        user:req.user?req.user.username:''
+    });
+}
