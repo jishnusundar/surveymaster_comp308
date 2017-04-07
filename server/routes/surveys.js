@@ -48,7 +48,7 @@ router.post('/MCQSurveyTemplate',requireAuth,(req,res,next) => {
   surveysController.processMCQSurvey(req,res,next);
 });
 
-router.get('/editMCQSurvey/:id',(requireAuth,req,res,next) => {
+router.get('/editMCQSurvey/:id',requireAuth,(req,res,next) => {
 surveysController.displaMCQEditPage(req,res,next,req.params.id);
 });
 
