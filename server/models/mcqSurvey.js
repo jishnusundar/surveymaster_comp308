@@ -4,10 +4,10 @@ let mongoose = require('mongoose');
 let MCQSchema = mongoose.Schema({
     title: String,
     author: String,
-    lifetime: int,
+    lifetime: String,
     created: Date,
-    active: boolean,
-    questions:[],
+    active: String,
+    questions:{}
 },
 {
   collection: "mcqsurvey"

@@ -28,6 +28,14 @@ surveysController.displaySurveyTemplate(req,res,next);
 
 });
 
+router.get('/MCQSurveyTemplate',(req,res,next) => {
+  surveysController.displayMCQSurveyTemplate(req,res,next);
+});
+
+router.post('/MCQSurveyTemplate',(req,res,next) => {
+  surveysController.processMCQSurvey(req,res,next);
+});
+
 router.get('/viewMCQSurvey',(req,res,next) => {
 surveysController.viewMCQSurvey(req,res,next);
 });
