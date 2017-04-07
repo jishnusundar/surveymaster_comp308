@@ -3,11 +3,14 @@
 <div class="outer-box">
  
  
-<!--Survey Name(from connfigureSurvey/ database Page-->
-    <div class="survey-container">
-    <h3><%= surveys.title %></h3><!--dynamic data-->
+
 
     <form method="post">
+<!--Survey Name(from connfigureSurvey/ database Page-->
+
+    <div class="survey-container">
+    <input type="text" class="form-control" placeholder="Please type your question" value = "<%= surveys.title %>" name = "surveyTitle">
+
 
     <!--Question 1-->
     <div class="question-break">

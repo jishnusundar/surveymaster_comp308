@@ -254,7 +254,7 @@ module.exports.processMCQSurveyEdit = (req,res,next,id) => {
 
      let updatedSurvey = mcqSurvey({
              "_id": surveyId,
-             "title": req.session.surveyTitle,
+             "title": req.body.surveyTitle,
              "author": "",
              "lifetime": req.session.lifeTime,
              "created": Date.now(),

@@ -57,7 +57,7 @@ response.create(newResponse, (err, resp) => {
        return res.end(err);
       } else {
           console.log("Response created successfully");
-        return res.redirect('/survey/userSurveyList');
+        return res.redirect('/respond/thankYou');
       }
     });
 
