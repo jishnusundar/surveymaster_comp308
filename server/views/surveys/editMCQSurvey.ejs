@@ -3,9 +3,9 @@
 <div class="outer-box">
  
  
-<!--Survey Name(from connfigureSurvey Page-->
+<!--Survey Name(from connfigureSurvey/ database Page-->
     <div class="survey-container">
-    <h3><%= surveyTitle %></h3><!--dynamic data-->
+    <h3><%= surveys.title %></h3><!--dynamic data-->
 
     <form method="post">
 
@@ -17,7 +17,7 @@
 
          <!--Text field-->
         <div class="survey-form-list-control-text">
-        <input type="text" class="form-control" placeholder="Please type your question" name = "q1">
+        <input type="text" class="form-control" placeholder="Please type your question" value = "<%= surveys.questions.q1 %>" name = "q1">
         </div>
     </div>
 
@@ -29,23 +29,23 @@
         <div class="survey-form-list-control">
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 1" name = "q1o1">
+            <input type="text" class="form-control" placeholder="Option 1" value = "<%= surveys.questions.q1o1 %>" name = "q1o1">
             </div>
 
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 2" name = "q1o2">
+            <input type="text" class="form-control" placeholder="Option 2" value = "<%= surveys.questions.q1o2 %>" name = "q1o2">
             </div>
         </div>
 
         <div class="survey-form-list-control">
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 3" name = "q1o3">
+            <input type="text" class="form-control" placeholder="Option 3" value = "<%= surveys.questions.q1o3 %>" name = "q1o3">
             </div>
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 4" name = "q1o4">
+            <input type="text" class="form-control" placeholder="Option 4" value = "<%= surveys.questions.q1o4 %>" name = "q1o4">
             </div>
        <!--/Options-->
       </div>
@@ -61,7 +61,7 @@
 
          <!--Text field-->
         <div class="survey-form-list-control-text">
-        <input type="text" class="form-control" placeholder="Please type your question" name = "q2">
+        <input type="text" class="form-control" placeholder="Please type your question" value = "<%= surveys.questions.q2 %>" name = "q2">
         </div>
     </div>
 
@@ -73,23 +73,23 @@
         <div class="survey-form-list-control">
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 1" name = "q2o1">
+            <input type="text" class="form-control" placeholder="Option 1" value = "<%= surveys.questions.q2o1 %>" name = "q2o1">
             </div>
 
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 2" name = "q2o2">
+            <input type="text" class="form-control" placeholder="Option 2" value = "<%= surveys.questions.q2o2 %>" name = "q2o2">
             </div>
         </div>
 
         <div class="survey-form-list-control">
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 3" name = "q2o3">
+            <input type="text" class="form-control" placeholder="Option 3" value = "<%= surveys.questions.q2o3 %>" name = "q2o3">
             </div>
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 4" name = "q2o4">
+            <input type="text" class="form-control" placeholder="Option 4" value = "<%= surveys.questions.q2o4 %>" name = "q2o4">
             </div>
        <!--/Options-->
       </div>
@@ -105,7 +105,7 @@
 
          <!--Text field-->
         <div class="survey-form-list-control-text">
-        <input type="text" class="form-control" placeholder="Please type your question" name = "q3">
+        <input type="text" class="form-control" placeholder="Please type your question" value = "<%= surveys.questions.q3 %>" name = "q3">
         </div>
     </div>
 
@@ -117,23 +117,23 @@
         <div class="survey-form-list-control">
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 1" name = "q3o1">
+            <input type="text" class="form-control" placeholder="Option 1" value = "<%= surveys.questions.q3o1 %>" name = "q3o1">
             </div>
 
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 2" name = "q3o2">
+            <input type="text" class="form-control" placeholder="Option 2" value = "<%= surveys.questions.q3o2 %>" name = "q3o2">
             </div>
         </div>
 
         <div class="survey-form-list-control">
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 3" name = "q3o3">
+            <input type="text" class="form-control" placeholder="Option 3" value = "<%= surveys.questions.q3o3 %>" name = "q3o3">
             </div>
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 4" name = "q3o4">
+            <input type="text" class="form-control" placeholder="Option 4" value = "<%= surveys.questions.q3o4 %>" name = "q3o4">
             </div>
         <!--Options-->
       </div>
@@ -149,7 +149,7 @@
 
          <!--Text field-->
         <div class="survey-form-list-control-text">
-        <input type="text" class="form-control" placeholder="Please type your question" name = "q4">
+        <input type="text" class="form-control" placeholder="Please type your question" value = "<%= surveys.questions.q4 %>" name = "q4">
         </div>
     </div>
 
@@ -161,23 +161,23 @@
         <div class="survey-form-list-control">
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 1" name = "q4o1">
+            <input type="text" class="form-control" placeholder="Option 1" value = "<%= surveys.questions.q4o1 %>" name = "q4o1">
             </div>
 
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 2" name = "q4o2">
+            <input type="text" class="form-control" placeholder="Option 2" value = "<%= surveys.questions.q4o2 %>" name = "q4o2">
             </div>
         </div>
 
         <div class="survey-form-list-control">
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 3" name = "q4o3">
+            <input type="text" class="form-control" placeholder="Option 3" value = "<%= surveys.questions.q4o3 %>" name = "q4o3">
             </div>
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 4" name = "q4o4">
+            <input type="text" class="form-control" placeholder="Option 4" value = "<%= surveys.questions.q4o4 %>" name = "q4o4">
             </div>
         <!--Options-->
       </div>
@@ -193,7 +193,7 @@
 
          <!--Text field-->
         <div class="survey-form-list-control-text">
-        <input type="text" class="form-control" placeholder="Please type your question" name = "q5">
+        <input type="text" class="form-control" placeholder="Please type your question" value = "<%= surveys.questions.q5 %>" name = "q5">
         </div>
     </div>
 
@@ -205,23 +205,23 @@
         <div class="survey-form-list-control">
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 1" name = "q5o1">
+            <input type="text" class="form-control" placeholder="Option 1" value = "<%= surveys.questions.q5o1 %>" name = "q5o1">
             </div>
 
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 2" name = "q5o2">
+            <input type="text" class="form-control" placeholder="Option 2" value = "<%= surveys.questions.q5o2 %>" name = "q5o2">
             </div>
         </div>
 
         <div class="survey-form-list-control">
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 3" name = "q5o3">
+            <input type="text" class="form-control" placeholder="Option 3" value = "<%= surveys.questions.q5o3 %>" name = "q5o3">
             </div>
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 4" name = "q5o4">
+            <input type="text" class="form-control" placeholder="Option 4" value = "<%= surveys.questions.q5o4 %>" name = "q5o4">
             </div>
         <!--Options-->
       </div>
@@ -237,7 +237,7 @@
 
          <!--Text field-->
         <div class="survey-form-list-control-text">
-        <input type="text" class="form-control" placeholder="Please type your question" name = "q6">
+        <input type="text" class="form-control" placeholder="Please type your question" value = "<%= surveys.questions.q6 %>" name = "q6">
         </div>
     </div>
 
@@ -249,23 +249,23 @@
         <div class="survey-form-list-control">
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 1" name = "q6o1">
+            <input type="text" class="form-control" placeholder="Option 1" value = "<%= surveys.questions.q6o1 %>" name = "q6o1">
             </div>
 
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 2" name = "q6o2">
+            <input type="text" class="form-control" placeholder="Option 2" value = "<%= surveys.questions.q6o2 %>" name = "q6o2">
             </div>
         </div>
 
         <div class="survey-form-list-control">
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 3" name = "q6o3">
+            <input type="text" class="form-control" placeholder="Option 3" value = "<%= surveys.questions.q6o3 %>" name = "q6o3">
             </div>
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 4" name = "q6o4">
+            <input type="text" class="form-control" placeholder="Option 4" value = "<%= surveys.questions.q6o4 %>" name = "q6o4">
             </div>
         <!--Options-->
       </div>
@@ -280,7 +280,7 @@
 
          <!--Text field-->
         <div class="survey-form-list-control-text">
-        <input type="text" class="form-control" placeholder="Please type your question" name = "q7">
+        <input type="text" class="form-control" placeholder="Please type your question" value = "<%= surveys.questions.q7 %>" name = "q7">
         </div>
     </div>
 
@@ -292,23 +292,23 @@
         <div class="survey-form-list-control">
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 1" name = "q7o1">
+            <input type="text" class="form-control" placeholder="Option 1" value = "<%= surveys.questions.q7o1 %>" name = "q7o1">
             </div>
 
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 2" name = "q7o2">
+            <input type="text" class="form-control" placeholder="Option 2" value = "<%= surveys.questions.q7o2 %>" name = "q7o2">
             </div>
         </div>
 
         <div class="survey-form-list-control">
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 3" name = "q7o3">
+            <input type="text" class="form-control" placeholder="Option 3" value = "<%= surveys.questions.q7o3 %>" name = "q7o3">
             </div>
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 4" name = "q7o4">
+            <input type="text" class="form-control" placeholder="Option 4" value = "<%= surveys.questions.q7o4 %>" name = "q7o4">
             </div>
         <!--Options-->
       </div>
@@ -324,7 +324,7 @@
 
          <!--Text field-->
         <div class="survey-form-list-control-text">
-        <input type="text" class="form-control" placeholder="Please type your question" name = "q8">
+        <input type="text" class="form-control" placeholder="Please type your question" value = "<%= surveys.questions.q8 %>" name = "q8">
         </div>
     </div>
 
@@ -336,23 +336,23 @@
         <div class="survey-form-list-control">
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 1" name = "q8o1">
+            <input type="text" class="form-control" placeholder="Option 1" value = "<%= surveys.questions.q8o1 %>" name = "q8o1">
             </div>
 
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 2" name = "q8o2">
+            <input type="text" class="form-control" placeholder="Option 2" value = "<%= surveys.questions.q8o2 %>" name = "q8o2">
             </div>
         </div>
 
         <div class="survey-form-list-control">
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 3" name = "q8o3">
+            <input type="text" class="form-control" placeholder="Option 3" value = "<%= surveys.questions.q8o3 %>" name = "q8o3">
             </div>
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 4" name = "q8o4">
+            <input type="text" class="form-control" placeholder="Option 4" value = "<%= surveys.questions.q8o4 %>" name = "q8o4">
             </div>
         <!--Options-->
       </div>
@@ -368,7 +368,7 @@
 
          <!--Text field-->
         <div class="survey-form-list-control-text">
-        <input type="text" class="form-control" placeholder="Please type your question" name = "q9">
+        <input type="text" class="form-control" placeholder="Please type your question" value = "<%= surveys.questions.q9 %>" name = "q9">
         </div>
     </div>
 
@@ -380,23 +380,23 @@
         <div class="survey-form-list-control">
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 1" name = "q9o1">
+            <input type="text" class="form-control" placeholder="Option 1" value = "<%= surveys.questions.q9o1 %>" name = "q9o1">
             </div>
 
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 2" name = "q9o2">
+            <input type="text" class="form-control" placeholder="Option 2" value = "<%= surveys.questions.q9o2 %>" name = "q9o2">
             </div>
         </div>
 
         <div class="survey-form-list-control">
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 3" name = "q9o3">
+            <input type="text" class="form-control" placeholder="Option 3" value = "<%= surveys.questions.q9o3 %>" name = "q9o3">
             </div>
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 4" name = "q9o4">
+            <input type="text" class="form-control" placeholder="Option 4" value = "<%= surveys.questions.q9o4 %>" name = "q9o4">
             </div>
         <!--Options-->
       </div>
@@ -412,7 +412,7 @@
 
          <!--Text field-->
         <div class="survey-form-list-control-text">
-        <input type="text" class="form-control" placeholder="Please type your question" name = "q10">
+        <input type="text" class="form-control" placeholder="Please type your question" value = "<%= surveys.questions.q10 %>" name = "q10">
         </div>
     </div>
 
@@ -424,23 +424,23 @@
         <div class="survey-form-list-control">
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 1" name = "q10o1">
+            <input type="text" class="form-control" placeholder="Option 1" value = "<%= surveys.questions.q10o1 %>" name = "q10o1">
             </div>
 
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 2" name = "q10o2">
+            <input type="text" class="form-control" placeholder="Option 2" value = "<%= surveys.questions.q10o2 %>" name = "q10o2">
             </div>
         </div>
 
         <div class="survey-form-list-control">
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 3" name = "q10o3">
+            <input type="text" class="form-control" placeholder="Option 3" value = "<%= surveys.questions.q10o3 %>" name = "q10o3">
             </div>
             <!--Text field-->
             <div class="survey-form-list-control-text-break">
-            <input type="text" class="form-control" placeholder="Option 4" name = "q10o4">
+            <input type="text" class="form-control" placeholder="Option 4" value = "<%= surveys.questions.q10o4 %>" name = "q10o4">
             </div>
         <!--Options-->
       </div>
