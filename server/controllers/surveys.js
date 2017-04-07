@@ -1,6 +1,7 @@
 //Import model for surveys
-
 let mcqSurvey = require('../models/mcqSurvey');
+let mongoose = require('mongoose');
+
 
 module.exports.displayUserSurveyPage = (req,res,next)=> 
 {
@@ -155,11 +156,32 @@ module.exports.processMCQSurvey = (req,res,next) => {
     });
 }
 
-module.exports.viewMCQSurvey = (req,res,next) => {
+module.exports.viewMCQSurvey = (req,res,next,id) => {
+
+    try {
+      // get a reference to the id from the url
+      let surveyId = mongoose.Types.ObjectId.createFromHexString(id);
+
+        // find one survey by its id
+      mcqSurvey.findById(surveyId, (err, surveys) => {
+        if(err) {
+          console.log(err);
+          return res.end(error);
+        } else {
+          // show the survey's detailed view
 return res.render('surveys/viewMCQSurvey',{
  title:'View Survey',
-        user:req.user?req.user.username:''
+        user:req.user?req.user.username:'',
+        surveys: surveys
 });
+        }
+      });
+    } catch (err) {
+      console.log(err);
+      res.redirect('/errors/404');
+    }
+
+
 }
 
 module.exports.displaySurveyConfirmation = (req,res,next) => {
@@ -172,6 +194,13 @@ module.exports.displaySurveyConfirmation = (req,res,next) => {
 module.exports.displaySurveyStatistics = (req,res,next,id) => {
     return res.render('surveys/surveyStats',{
         title:'Your survey Statistics',
+        user:req.user?req.user.username:''
+    });
+}
+
+module.exports.displayTFSurveyTemplate = (req,res,next) => {
+     return res.render('surveys/tfSurveyTemplate',{
+        title:'Your survey',
         user:req.user?req.user.username:''
     });
 }

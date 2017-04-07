@@ -28,6 +28,10 @@ surveysController.displaySurveyTemplate(req,res,next);
 
 });
 
+router.get('/tfSurveyTemplate', (req,res,next) => {
+  surveysController.displayTFSurveyTemplate(req,res,next);
+});
+
 router.get('/MCQSurveyTemplate',(req,res,next) => {
   surveysController.displayMCQSurveyTemplate(req,res,next);
 });
@@ -36,8 +40,8 @@ router.post('/MCQSurveyTemplate',(req,res,next) => {
   surveysController.processMCQSurvey(req,res,next);
 });
 
-router.get('/viewMCQSurvey',(req,res,next) => {
-surveysController.viewMCQSurvey(req,res,next);
+router.get('/viewMCQSurvey/:id',(req,res,next) => {
+surveysController.viewMCQSurvey(req,res,next,req.params.id);
 });
 
 router.get('/confirmSurvey',(req,res,next)=>{
