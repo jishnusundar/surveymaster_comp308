@@ -233,11 +233,11 @@ module.exports.displaMCQEditPage =(req,res,next,id) => {
           return res.end(error);
         } else {
           // show the survey's detailed view
-return res.render('surveys/MCQsurveyTemplate',{
+return res.render('surveys/editMCQSurvey',{
  title:'Edit Survey',
         user:req.user?req.user.username:'',
         surveys: surveys,
-         surveyTitle: req.session.surveyTitle
+         surveyTitle: ''
 });
         }
       });
@@ -340,5 +340,20 @@ module.exports.displayTFViewPage = (req,res,next) => {
     return res.render ('surveys/tfViewSurvey',{
         title:'View Survey',
         user:req.user?req.user.username:''
+    });
+}
+
+module.exports.deleteSurvey = (req,res,next,id) => {
+      // get a reference to the id from the url
+    let surveyId = req.params.id;
+
+    mcqSurvey.remove({_id: surveyId}, (err) => {
+      if(err) {
+        console.log(err);
+        res.end(err);
+      } else {
+        // refresh the games list
+        res.redirect('/survey/userSurveyList');
+      }
     });
 }

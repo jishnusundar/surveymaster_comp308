@@ -70,6 +70,10 @@ router.get('/surveyStats/:id',(req,res,next)=>{
 
 router.get('/tfViewSurvey',(req,res,next) => {
   surveysController.displayTFViewPage(req,res,next);
-})
+});
+
+router.get('/delete/:id',(req,res,next) => {
+  surveysController.deleteSurvey(req,res,next,req.params.id);
+});
 
 module.exports = router;
