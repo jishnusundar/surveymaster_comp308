@@ -1,12 +1,12 @@
 //Import model for surveys
-let mcqSurvey = require('../models/mcqSurvey');
+let survey = require('../models/surveys');
 let mongoose = require('mongoose');
 
 
 module.exports.displayUserSurveyPage = (req,res,next)=> 
 {
 
- mcqSurvey.find( (err, surveys) => {
+ survey.find( (err, surveys) => {
     if (err) {
       return console.error(err);
     }
@@ -74,9 +74,10 @@ module.exports.displayMCQSurveyTemplate = (req,res,next) => {
 }
 
 module.exports.processMCQSurvey = (req,res,next) => {
-        let newSurvey = mcqSurvey({
+        let newSurvey = survey({
              "title": req.session.surveyTitle,
-             "author": "",
+             "author": req.user._id,
+             "type":"MCQ",
              "lifetime": req.session.lifeTime,
              "created": Date.now(),
              "active": "true",
@@ -146,7 +147,7 @@ module.exports.processMCQSurvey = (req,res,next) => {
 
     });
 
-    mcqSurvey.create(newSurvey, (err, mcqSurvey) => {
+    survey.create(newSurvey, (err, mcqSurvey) => {
       if(err) {
         console.log("ERROR creating survey!!!: "+err);
        return res.end(err);
@@ -164,7 +165,7 @@ module.exports.viewMCQSurvey = (req,res,next,id) => {
       let surveyId = mongoose.Types.ObjectId.createFromHexString(id);
 
         // find one survey by its id
-      mcqSurvey.findById(surveyId, (err, surveys) => {
+      survey.findById(surveyId, (err, surveys) => {
         if(err) {
           console.log(err);
           return res.end(error);
@@ -227,7 +228,7 @@ module.exports.displaMCQEditPage =(req,res,next,id) => {
       let surveyId = mongoose.Types.ObjectId.createFromHexString(id);
 
         // find one survey by its id
-      mcqSurvey.findById(surveyId, (err, surveys) => {
+      survey.findById(surveyId, (err, surveys) => {
         if(err) {
           console.log(err);
           return res.end(error);
@@ -252,10 +253,11 @@ module.exports.processMCQSurveyEdit = (req,res,next,id) => {
   // get a reference to the id from the url
     let surveyId = req.params.id;
 
-     let updatedSurvey = mcqSurvey({
+     let updatedSurvey = survey({
              "_id": surveyId,
              "title": req.body.surveyTitle,
-             "author": "",
+             "type":"MCQ",
+             "author": req.user._id,
              "lifetime": req.session.lifeTime,
              "created": Date.now(),
              "active": "true",
@@ -325,7 +327,7 @@ module.exports.processMCQSurveyEdit = (req,res,next,id) => {
 
     });
 
-    mcqSurvey.update({_id: surveyId}, updatedSurvey, (err) => {
+    survey.update({_id: surveyId}, updatedSurvey, (err) => {
       if(err) {
         console.log(err);
        return res.end(err);
@@ -347,7 +349,7 @@ module.exports.deleteSurvey = (req,res,next,id) => {
       // get a reference to the id from the url
     let surveyId = req.params.id;
 
-    mcqSurvey.remove({_id: surveyId}, (err) => {
+    survey.remove({_id: surveyId}, (err) => {
       if(err) {
         console.log(err);
         res.end(err);

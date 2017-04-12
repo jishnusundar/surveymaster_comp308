@@ -1,5 +1,5 @@
 //Import model for surveys
-let mcqSurvey = require('../models/mcqSurvey');
+let survey = require('../models/surveys');
 let response = require('../models/response');
 let mongoose = require('mongoose');
 
@@ -10,7 +10,7 @@ module.exports.displayResponsePage = (req,res,next,id) => {
       let surveyId = mongoose.Types.ObjectId.createFromHexString(id);
 
         // find one survey by its id
-      mcqSurvey.findById(surveyId, (err, surveys) => {
+      survey.findById(surveyId, (err, surveys) => {
         if(err) {
           console.log(err);
           return res.end(error);

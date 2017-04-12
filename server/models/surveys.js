@@ -1,8 +1,9 @@
 let mongoose = require('mongoose');
 
 // model for MCQ survey
-let MCQSchema = mongoose.Schema({
+let surveySchema = mongoose.Schema({
     title: String,
+    type: String,
     author: String,
     lifetime: String,
     created: Date,
@@ -10,7 +11,7 @@ let MCQSchema = mongoose.Schema({
     questions:{}
 },
 {
-  collection: "mcqsurvey"
+  collection: "surveys"
 });
 
-module.exports = mongoose.model('mcqSchema', MCQSchema);
+module.exports = mongoose.model('surveySchema', surveySchema);
