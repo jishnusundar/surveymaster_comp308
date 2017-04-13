@@ -1,12 +1,12 @@
 //Import model for surveys
 let survey = require('../models/surveys');
 let mongoose = require('mongoose');
-
+var moment = require('moment');
 
 module.exports.displayUserSurveyPage = (req,res,next)=> 
 {
 
- survey.find( (err, surveys) => {
+ survey.find( {"author":req.user._id},(err, surveys) => {
     if (err) {
       return console.error(err);
     }
@@ -74,12 +74,14 @@ module.exports.displayMCQSurveyTemplate = (req,res,next) => {
 }
 
 module.exports.processMCQSurvey = (req,res,next) => {
+
+  
         let newSurvey = survey({
              "title": req.session.surveyTitle,
              "author": req.user._id,
              "type":"MCQ",
              "lifetime": req.session.lifeTime,
-             "created": Date.now(),
+             "created": moment().format('MM DD YYYY'),
              "active": "true",
              "questions": {
                  "q1":req.body.q1,
@@ -252,14 +254,11 @@ return res.render('surveys/editMCQSurvey',{
 module.exports.processMCQSurveyEdit = (req,res,next,id) => {
   // get a reference to the id from the url
     let surveyId = req.params.id;
-
+let currentDate = new Date();
+  currentDate = currentDate.toLocaleTimeString();
      let updatedSurvey = survey({
              "_id": surveyId,
              "title": req.body.surveyTitle,
-             "type":"MCQ",
-             "author": req.user._id,
-             "lifetime": req.session.lifeTime,
-             "created": Date.now(),
              "active": "true",
              "questions": {
                  "q1":req.body.q1,

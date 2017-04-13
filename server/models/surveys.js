@@ -6,7 +6,7 @@ let surveySchema = mongoose.Schema({
     type: String,
     author: String,
     lifetime: String,
-    created: Date,
+    created: String,
     active: String,
     questions:{}
 },

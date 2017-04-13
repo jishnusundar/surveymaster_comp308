@@ -2,6 +2,7 @@
 let survey = require('../models/surveys');
 let response = require('../models/response');
 let mongoose = require('mongoose');
+var moment = require('moment');
 
 module.exports.displayResponsePage = (req,res,next,id) => {
 
@@ -15,12 +16,29 @@ module.exports.displayResponsePage = (req,res,next,id) => {
           console.log(err);
           return res.end(error);
         } else {
-          // show the survey's response view
-return res.render('surveys/respondMCQ',{
- title: 'Respond to survey',
+
+          
+
+      if(moment(surveys.lifetime).isAfter(moment().format('MM DD YYYY'))){ //if survey not expired
+                  // show the survey's response view
+        return res.render('surveys/respondMCQ',{
+        title: 'Respond to survey',
         user:req.user?req.user.username:'',
         surveys: surveys
-});
+        });
+
+
+      }
+      else //if survey expired
+      {
+        return res.render('surveys/expired',{
+        title: 'Survey Expired',
+        user:req.user?req.user.username:'',
+        });
+
+      }
+
+
         }
       });
     } catch (err) {
