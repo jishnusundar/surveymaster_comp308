@@ -82,7 +82,6 @@ module.exports.processMCQSurvey = (req,res,next) => {
              "type":"MCQ",
              "lifetime": req.session.lifeTime,
              "created": moment().format('MM DD YYYY'),
-             "active": "true",
              "questions": {
                  "q1":req.body.q1,
                  "q1o1":req.body.q1o1,
@@ -259,7 +258,6 @@ let currentDate = new Date();
      let updatedSurvey = survey({
              "_id": surveyId,
              "title": req.body.surveyTitle,
-             "active": "true",
              "questions": {
                  "q1":req.body.q1,
                  "q1o1":req.body.q1o1,
