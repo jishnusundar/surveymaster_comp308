@@ -63,7 +63,7 @@ else
 
 module.exports.displayMCQSurveyTemplate = (req,res,next) => {
 
-    return res.render('surveys/MCQsurveyTemplate',{
+    return res.render('surveys/MCQ/MCQsurveyTemplate',{
      title:'Customize your survey',
      user:req.user?req.user.username:'',
      surveyTitle: req.session.surveyTitle,
@@ -173,7 +173,7 @@ module.exports.viewMCQSurvey = (req,res,next,id) => {
           return res.end(error);
         } else {
           // show the survey's detailed view
-return res.render('surveys/viewMCQSurvey',{
+return res.render('surveys/MCQ/viewMCQSurvey',{
  title:'View Survey',
         user:req.user?req.user.username:'',
         surveys: surveys
@@ -203,21 +203,21 @@ module.exports.displaySurveyStatistics = (req,res,next,id) => {
 }
 
 module.exports.displayTFSurveyTemplate = (req,res,next) => {
-     return res.render('surveys/tfSurveyTemplate',{
+     return res.render('surveys/TF/tfSurveyTemplate',{
         title:'Your survey',
         user:req.user?req.user.username:''
     });
 }
 
 module.exports.displayTextSurveyTemplate = (req,res,next) => {
-    return res.render('surveys/textSurveyTemplate',{
+    return res.render('surveys/QA/textSurveyTemplate',{
         title:'Your survey',
         user:req.user?req.user.username:''
     });
 }
 
 module.exports.textViewSurvey = (req,res,next) => {
-    return res.render('surveys/textViewSurvey',{
+    return res.render('surveys/QA/textViewSurvey',{
         title:'Your survey',
         user:req.user?req.user.username:''
     });
@@ -236,7 +236,7 @@ module.exports.displaMCQEditPage =(req,res,next,id) => {
           return res.end(error);
         } else {
           // show the survey's detailed view
-return res.render('surveys/editMCQSurvey',{
+return res.render('surveys/MCQ/editMCQSurvey',{
  title:'Edit Survey',
         user:req.user?req.user.username:'',
         surveys: surveys,
@@ -338,7 +338,7 @@ let currentDate = new Date();
 }
 
 module.exports.displayTFViewPage = (req,res,next) => {
-    return res.render ('surveys/tfViewSurvey',{
+    return res.render ('surveys/TF/tfViewSurvey',{
         title:'View Survey',
         user:req.user?req.user.username:''
     });

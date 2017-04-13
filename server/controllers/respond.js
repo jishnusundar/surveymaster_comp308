@@ -21,7 +21,7 @@ module.exports.displayResponsePage = (req,res,next,id) => {
 
       if(moment(surveys.lifetime).isAfter(moment().format('MM DD YYYY'))){ //if survey not expired
                   // show the survey's response view
-        return res.render('surveys/respondMCQ',{
+        return res.render('surveys/MCQ/respondMCQ',{
         title: 'Respond to survey',
         user:req.user?req.user.username:'',
         surveys: surveys
