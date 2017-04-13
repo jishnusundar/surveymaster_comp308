@@ -34,6 +34,7 @@
 
             <% if(typeof user == 'string' && user) { %>
             <li><a href="#">Welcome, <%= user %></a></li>
+            <li><a href="/survey/userSurveyList">My Surveys</a></li>
             <li><a href="/auth/logout">Log Out</a></li>
             <% } else { %>
             <li><a href="/auth/login">Log in</a></li>

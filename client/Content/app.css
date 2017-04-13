@@ -359,3 +359,9 @@ p{
 .my-div-hover:hover{
  background-color: #bddbfa;
 }
+
+/*Overwriting bootstrap css to fit Survey master website*/
+.checkbox-inline .radio-inline{
+    position:none;
+}
+.chec
