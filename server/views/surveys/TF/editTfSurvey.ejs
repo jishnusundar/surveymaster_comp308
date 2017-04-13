@@ -5,17 +5,11 @@
  
 <!--Survey Name(from connfigureSurvey Page-->
     <div class="survey-container">
-    <h3><%= surveys.title %></h3><!--dynamic data-->
+    
 
     <form method="post">
-  <!--Go Back Button-->
-        <div class="survey-form-list-control">
-        <div class="survey-form-list-control-button">
-         
-         <a class="btn btn-default" href="/survey/userSurveyList" role="button">My Home</a>
-        </div>
-        
-        </div>
+<input type="text" class="form-control" value = "<%= surveys.title %>" name = "surveyTitle">
+
     <!--Question 1-->
     <div class="question-break">
     <div class="survey-form-list-control">
@@ -31,10 +25,10 @@
     <!--Options-->
         <div class="survey-form-list-control">
         <label class="radio-inline">
-        <input type="radio" name="tf1" id="" value="" >True
+        <input type="radio" name="q1a" id="" value="True"  >True
         </label>
         <label class="radio-inline">
-        <input type="radio" name="tf1" id="" value="" >False
+        <input type="radio" name="q1a" id="" value="False"  >False
         </label>
        <!--/Options-->
       </div>
@@ -57,10 +51,10 @@
     <!--Options-->
         <div class="survey-form-list-control">
         <label class="radio-inline">
-        <input type="radio" name="tf2" id="" value="" >True
+        <input type="radio" name="q2a" id="" value="True"  >True
         </label>
         <label class="radio-inline">
-        <input type="radio" name="tf2" id="" value="" >False
+        <input type="radio" name="q2a" id="" value="False"  >False
         </label>
        <!--/Options-->
       </div>
@@ -83,10 +77,10 @@
     <!--Options-->
         <div class="survey-form-list-control">
         <label class="radio-inline">
-        <input type="radio" name="tf3" id="" value="">True
+        <input type="radio" name="q3a" id="" value="True"  >True
         </label>
         <label class="radio-inline">
-        <input type="radio" name="tf3" id="" value="">False
+        <input type="radio" name="q3a" id="" value="False"  >False
         </label>
         <!--Options-->
       </div>
@@ -107,13 +101,16 @@
     </div>
 
     <!--Options-->
-      
+        <div class="survey-form-list-control">
+            <div class="survey-form-list-control-listNum">Please input your options</div>
+        </div>
+
         <div class="survey-form-list-control">
         <label class="radio-inline">
-        <input type="radio" name="tf4" id="" value="" >True
+        <input type="radio" name="q4a" id="" value="True"  >True
         </label>
         <label class="radio-inline">
-        <input type="radio" name="tf4" id="" value="" >False
+        <input type="radio" name="q4a" id="" value="False"  >False
         </label>
         <!--Options-->
       </div>
@@ -136,10 +133,10 @@
     <!--Options-->
         <div class="survey-form-list-control">
         <label class="radio-inline">
-        <input type="radio" name="tf5" id="" value="" >True
+        <input type="radio" name="q5a" id="" value="True"  >True
         </label>
         <label class="radio-inline">
-        <input type="radio" name="tf5" id="" value="" >False
+        <input type="radio" name="q5a" id="" value="False"  >False
         </label>
         <!--Options-->
       </div>
@@ -162,10 +159,10 @@
     <!--Options-->
         <div class="survey-form-list-control">
         <label class="radio-inline">
-        <input type="radio" name="tf6" id="" value="" >True
+        <input type="radio" name="q6a" id="" value="True"  >True
         </label>
         <label class="radio-inline">
-        <input type="radio" name="tf6" id="" value="" >False
+        <input type="radio" name="q6a" id="" value="False"  >False
         </label>
         <!--Options-->
       </div>
@@ -187,10 +184,10 @@
     <!--Options-->
         <div class="survey-form-list-control">
         <label class="radio-inline">
-        <input type="radio" name="tf7" id="" value="" >True
+        <input type="radio" name="q7a" id="" value="True"  >True
         </label>
         <label class="radio-inline">
-        <input type="radio" name="tf7" id="" value="" >False
+        <input type="radio" name="q7a" id="" value="False"  >False
         </label>
         <!--Options-->
       </div>
@@ -213,10 +210,10 @@
     <!--Options-->
         <div class="survey-form-list-control">
         <label class="radio-inline">
-        <input type="radio" name="tf8" id="" value="" >True
+        <input type="radio" name="q8a" id="" value="True"  >True
         </label>
         <label class="radio-inline">
-        <input type="radio" name="tf8" id="" value="" >False
+        <input type="radio" name="q8a" id="" value="False"  >False
         </label>
         <!--Options-->
       </div>
@@ -239,10 +236,10 @@
     <!--Options-->
         <div class="survey-form-list-control">
         <label class="radio-inline">
-        <input type="radio" name="tf9" id="" value="" >True
+        <input type="radio" name="q9a" id="" value="True"  >True
         </label>
         <label class="radio-inline">
-        <input type="radio" name="tf9" id="" value="" >False
+        <input type="radio" name="q9a" id="" value="False"  >False
         </label>
         <!--Options-->
       </div>
@@ -265,10 +262,10 @@
     <!--Options-->
         <div class="survey-form-list-control">
         <label class="radio-inline">
-        <input type="radio" name="tf10" id="" value="" >True
+        <input type="radio" name="q10a" id="" value="True"  >True
         </label>
         <label class="radio-inline">
-        <input type="radio" name="tf10" id="" value="" >False
+        <input type="radio" name="q10a" id="" value="False"  >False
         </label>
         <!--Options-->
       </div>
@@ -279,7 +276,8 @@
     <!-- BUTTON-->
     <div class="survey-form-list-control">
      <div class="survey-form-list-control-listNum">
-         <a class="btn btn-default" href="/survey/userSurveyList" role="button">Go to My Survey Page</a>
+         <input type="submit" class="btn btn-default" value="Save Survey">
+         <a class="btn btn-default" href="/survey/userSurveyList" role="button">Cancel</a>
     </div>
     </div>
     <!-- /BUTTON-->

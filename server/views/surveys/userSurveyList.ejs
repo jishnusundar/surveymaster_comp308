@@ -28,10 +28,12 @@
          <div class="survey-form-list-control-label"><%= surveys[count].title %></div>
        
          <div class="survey-form-list-control-buttons right-position">
-         <a class="btn btn-default" href="/survey/viewMCQSurvey/<%= surveys[count]._id %>" role="button">View</a>
-         <a class="btn btn-default" href="/survey/editMCQSurvey/<%= surveys[count]._id %>" role="button">Edit</a>
+         <a class="btn btn-default" href="/survey/identifySurvey/<%= surveys[count]._id %>" role="button">View</a>
+         <a class="btn btn-default" href="/survey/identifyEdit/<%= surveys[count]._id %>" role="button">Edit</a>
          <a class="btn btn-default" href="/survey/delete/<%= surveys[count]._id %>" role="button">Del</a>
          <a class="btn btn-default" href="" role="button" data-toggle="modal" data-target="#<%= count %>Modal">Link</a>
+         <a class="btn btn-default" href="/respond/identifyResponseType/<%= surveys[count]._id %>" role="button">Share</a>
+
          </div>
     </div>
         <!-- Modal -->

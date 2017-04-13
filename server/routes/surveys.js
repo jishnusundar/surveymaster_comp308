@@ -32,6 +32,14 @@ router.get('/tfSurveyTemplate',requireAuth, (req,res,next) => {
   surveysController.displayTFSurveyTemplate(req,res,next);
 });
 
+router.post('/tfSurveyTemplate',requireAuth, (req,res,next) => {
+  surveysController.processTFSurvey(req,res,next);
+});
+
+router.get('/viewTFSurvey/:id',requireAuth,(req,res,next)=>{
+surveysController.viewTFSurvey(req,res,next);
+});
+
 router.get('/textSurveyTemplate',requireAuth,(req,res,next) => {
 surveysController.displayTextSurveyTemplate(req,res,next);
 });
@@ -56,6 +64,14 @@ router.post('/editMCQSurvey/:id',requireAuth,(req,res,next) => {
 surveysController.processMCQSurveyEdit(req,res,next,req.params.id);
 });
 
+router.get('/editTFSurvey/:id',requireAuth,(req,res,next) => {
+surveysController.displayTfEditPage(req,res,next,req.params.id);
+});
+
+router.post('/editTFSurvey/:id',requireAuth,(req,res,next) => {
+surveysController.processTfEdit(req,res,next,req.params.id);
+});
+
 router.get('/viewMCQSurvey/:id',requireAuth,(req,res,next) => {
 surveysController.viewMCQSurvey(req,res,next,req.params.id);
 });
@@ -64,13 +80,19 @@ router.get('/confirmSurvey',requireAuth,(req,res,next)=>{
    surveysController.displaySurveyConfirmation(req,res,next);
 });
 
+router.get('/identifySurvey/:id',requireAuth,(req,res,next)=> {
+surveysController.identifySurveyAndRedirect(req,res,next);
+});
+
+router.get('/identifyEdit/:id',requireAuth,(req,res,next)=> {
+surveysController.identifySurveyToEdit(req,res,next);
+});
+
 router.get('/surveyStats/:id',requireAuth,(req,res,next)=>{
    surveysController.displaySurveyStatistics(req,res,next,req.params.id);
 });
 
-router.get('/tfViewSurvey',requireAuth,(req,res,next) => {
-  surveysController.displayTFViewPage(req,res,next);
-});
+
 
 router.get('/delete/:id',requireAuth,(req,res,next) => {
   surveysController.deleteSurvey(req,res,next,req.params.id);

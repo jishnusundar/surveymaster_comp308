@@ -45,7 +45,7 @@ if(type == "Multiple Choice")
 }
 else if(type == "True or False")
 {
-
+  return res.redirect('/survey/tfSurveyTemplate');
 }
 
 else if(type == "Q&A") 
@@ -203,9 +203,93 @@ module.exports.displaySurveyStatistics = (req,res,next,id) => {
 
 module.exports.displayTFSurveyTemplate = (req,res,next) => {
      return res.render('surveys/TF/tfSurveyTemplate',{
-        title:'Your survey',
-        user:req.user?req.user.username:''
+           title:'Customize your survey',
+           user:req.user?req.user.username:'',
+           surveyTitle: req.session.surveyTitle,
+           surveys:''
     });
+}
+
+module.exports.processTFSurvey = (req,res,next) => {
+
+    
+        let newSurvey = survey({
+             "title": req.session.surveyTitle,
+             "author": req.user._id,
+             "type":"TF",
+             "lifetime": req.session.lifeTime,
+             "created": moment().format('MM DD YYYY'),
+             "questions": {
+                 "q1":req.body.q1,
+                 
+
+                  "q2":req.body.q2,
+                 
+
+                  "q3":req.body.q3,
+                 
+
+                  "q4":req.body.q4,
+                
+
+                  "q5":req.body.q5,
+                 
+
+                  "q6":req.body.q6,
+                
+
+                  "q7":req.body.q7,
+                 
+
+                  "q8":req.body.q8,
+                 
+
+                  "q9":req.body.q9,
+                 
+
+                  "q10":req.body.q10,
+                 
+
+             }
+
+
+    });
+
+    survey.create(newSurvey, (err, tfSurvey) => {
+      if(err) {
+        console.log("ERROR creating survey!!!: "+err);
+       return res.end(err);
+      } else {
+          console.log("Survey created successfully");
+        return res.redirect('/survey/viewTFSurvey/'+tfSurvey._id);
+      }
+    });
+
+}
+
+module.exports.viewTFSurvey = (req,res,next) => {
+      try {
+      // get a reference to the id from the url
+      let surveyId = mongoose.Types.ObjectId.createFromHexString(req.params.id);
+
+        // find one survey by its id
+      survey.findById(surveyId, (err, surveys) => {
+        if(err) {
+          console.log(err);
+          return res.end(error);
+        } else {
+          // show the survey's detailed view
+return res.render('surveys/TF/tfViewSurvey',{
+        title:'View Survey',
+        user:req.user?req.user.username:'',
+        surveys: surveys
+});
+        }
+      });
+    } catch (err) {
+      console.log(err);
+      res.redirect('/errors/404');
+    }
 }
 
 module.exports.displayTextSurveyTemplate = (req,res,next) => {
@@ -335,6 +419,73 @@ let currentDate = new Date();
     });
 }
 
+module.exports.displayTfEditPage = (req,res,next) => {
+
+      try {
+      // get a reference to the id from the url
+      let surveyId = mongoose.Types.ObjectId.createFromHexString(req.params.id);
+
+        // find one survey by its id
+      survey.findById(surveyId, (err, surveys) => {
+        if(err) {
+          console.log(err);
+          return res.end(error);
+        } else {
+          // show the survey's detailed view
+return res.render('surveys/TF/editTfSurvey',{
+        title:'Edit Survey',
+        user:req.user?req.user.username:'',
+        surveys: surveys,
+         surveyTitle: ''
+});
+        }
+      });
+    } catch (err) {
+      console.log(err);
+      res.redirect('/errors/404');
+    }
+
+
+}
+
+module.exports.processTfEdit = (req,res,next) => {
+
+  // get a reference to the id from the url
+    let surveyId = req.params.id;
+
+
+     let updatedSurvey = survey({
+             "_id": surveyId,
+             "title": req.body.surveyTitle,
+             "questions": {
+                 "q1":req.body.q1,
+                 "q2":req.body.q2,
+                 "q3":req.body.q3,
+                 "q4":req.body.q4,
+                 "q5":req.body.q5,
+                 "q6":req.body.q6,
+                 "q7":req.body.q7,
+                 "q8":req.body.q8,
+                 "q9":req.body.q9,
+                 "q10":req.body.q10
+
+             }
+
+
+    });
+
+    survey.update({_id: surveyId}, updatedSurvey, (err) => {
+      if(err) {
+        console.log(err);
+       return res.end(err);
+      } else {
+        // refresh the survey List
+      return  res.redirect('/survey/userSurveyList');
+      }
+    });
+
+}
+
 module.exports.displayTFViewPage = (req,res,next) => {
     return res.render ('surveys/TF/tfViewSurvey',{
         title:'View Survey',
@@ -355,4 +506,66 @@ module.exports.deleteSurvey = (req,res,next,id) => {
         res.redirect('/survey/userSurveyList');
       }
     });
+}
+
+module.exports.identifySurveyAndRedirect = (req,res,next) => {
+      try {
+      // get a reference to the id from the url
+      let surveyId = mongoose.Types.ObjectId.createFromHexString(req.params.id);
+
+        // find one survey by its id
+      survey.findById(surveyId, (err, surveys) => {
+        if(err) {
+          console.log(err);
+          return res.end(error);
+        } else {
+          //Determine survey's type and redirect to appropriate view page
+          if(surveys.type=="MCQ"){
+          return res.redirect('/survey/viewMCQSurvey/'+surveyId);
+        } 
+        else if(surveys.type=="TF") {
+          return res.redirect('/survey/viewTFSurvey/'+surveyId);
+
+        } 
+        else if(surveys.type=="QA") {
+          res.end();
+          }
+          
+        }
+      });
+    } catch (err) {
+      console.log(err);
+      res.redirect('/errors/404');
+    }
+}
+
+module.exports.identifySurveyToEdit = (req,res,next) => {
+        try {
+      // get a reference to the id from the url
+      let surveyId = mongoose.Types.ObjectId.createFromHexString(req.params.id);
+
+        // find one survey by its id
+      survey.findById(surveyId, (err, surveys) => {
+        if(err) {
+          console.log(err);
+          return res.end(error);
+        } else {
+          //Determine survey's type and redirect to appropriate view page
+          if(surveys.type=="MCQ"){
+          return res.redirect('/survey/editMCQSurvey/'+surveyId);
+        } 
+        else if(surveys.type=="TF") {
+          return res.redirect('/survey/editTFSurvey/'+surveyId);
+
+        } 
+        else if(surveys.type=="QA") {
+          res.end();
+          }
+          
+        }
+      });
+    } catch (err) {
+      console.log(err);
+      res.redirect('/errors/404');
+    }
 }
