@@ -230,7 +230,9 @@ p{
 	font-weight: 400px;
 	line-height: 25.6px;
 	word-wrap:break-word;
+    color:rgba(145, 145, 145, 1);
 }
+
 .txt-description{
 	    color:rgba(145, 145, 145, 1);
 		text-align:center;
@@ -245,6 +247,10 @@ p{
 }
 .page-header h2 {
     text-align: center;
+}
+.page-header h3{
+    color: #000;
+    padding-left: 10px;
 }
 .form-wrapper{
 		margin-left:35%;
@@ -364,4 +370,12 @@ p{
 .checkbox-inline .radio-inline{
     position:none;
 }
-.ch
+
+.button-color{
+     color:rgba(145, 145, 145, 1);
+}
+
+.narrow-form-container{
+    margin-left:30%;
+    margin-right:30%;
+}
