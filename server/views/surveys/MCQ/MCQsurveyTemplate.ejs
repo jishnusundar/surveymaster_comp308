@@ -5,7 +5,9 @@
  
 <!--Survey Name(from connfigureSurvey Page-->
     <div class="survey-container">
-    <h3><%= surveyTitle %></h3><!--dynamic data-->
+    <div class="page-header">
+    <h1><%= surveyTitle %></h1><!--dynamic data-->
+    </div>
 
     <form method="post">
 
@@ -17,7 +19,7 @@
 
          <!--Text field-->
         <div class="survey-form-list-control-text">
-        <input type="text" class="form-control" placeholder="Please type your question" name = "q1">
+        <input type="text" class="form-control" placeholder="Please type your question" name = "q1" required>
         </div>
     </div>
 

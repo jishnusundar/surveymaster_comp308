@@ -1,0 +1,92 @@
+<% include ./partials/header.ejs %>
+
+
+<div class="outer-box">
+
+    <div class="survey-container">
+    <div class="page-header">
+    <h1>Contact Us</h1>
+    </div>
+
+        
+        <div class ="narrow-form-container">
+
+                <div class="survey-form-list-control">
+                        <label>Name</label>
+                        <input type="text" class="form-control" placeholder="Enter your name" name = "contactname" required>
+                </div>
+                   
+                <div class="survey-form-list-control">
+                        <label>Email</label>
+                        <input type="email" class="form-control" placeholder="Enter your email" name = "contactemail" required>
+                </div>
+                    
+
+                <div class="survey-form-list-control">
+                        <label>Comments/Leave Message</label>                        
+                         <textarea class="form-control" rows="3" placeholder = "Enter your message" required></textarea>
+                </div>
+
+                  <div class="survey-form-list-control text-right">
+                        <input type="submit" class="btn btn-info" value="Send" data-toggle="modal" data-target="#myModal">
+                        <a href="/">
+                            <input type="button" class="btn btn-info" value="Cancel"/>
+                        </a>
+                </div>
+              </div>
+        </div>
+
+         <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+        
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header  alert alert-info">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2 class="modal-title">Thank you </h2>
+                </div>
+                <div class="modal-body">
+                <p>Thank you for contacting us.</p>
+                <p> Our team will respond to you very soon. </p>
+                </div>
+                <div class="modal-footer">
+                <a class="btn btn-default" href="/" role="button" data-dismiss="modal">Close</a>
+                </div>
+            </div>
+            </div>
+        <!-- /Modal -->
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<% include ./partials/footer.ejs %>
+      

@@ -12,7 +12,9 @@
 
     <!--Survey List-->
     <div class="survey-container">
+    <div class="page-header">
     <h3>My Survey List</h3>
+    </div>
     <div class="survey-form-list-control">
     <!---Create Survey Button-->
     <a class="btn btn-default btn-lg btn-block myButton" href="/survey/surveyConfig">Create a new Survey</a>
@@ -31,15 +33,34 @@
          <a class="btn btn-default" href="/survey/identifySurvey/<%= surveys[count]._id %>" role="button">View</a>
          <a class="btn btn-default" href="/survey/identifyEdit/<%= surveys[count]._id %>" role="button">Edit</a>
          <a class="btn btn-default" href="/survey/delete/<%= surveys[count]._id %>" role="button">Del</a>
-         <a class="btn btn-default" href="/respond/identifyResponseType/<%= surveys[count]._id %>" role="button">Link</a>
-         <a class="btn btn-default" href="" role="button">Share</a>
+         <a class="btn btn-default" href="" role="button" data-toggle="modal" data-target="#<%= count %>Modal">Link</a>
          </div>
     </div>
-    
+        <!-- Modal -->
+        <div class="modal fade" id="<%= count %>Modal" role="dialog">
+            <div class="modal-dialog">
+        
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Share this survey</h4>
+                </div>
+                <div class="modal-body">
+                <p>Share this with: <%= surveys[count]._id %>
+                </p>
+                </div>
+                <div class="modal-footer">
+                <a class="btn btn-default" href="/" role="button" data-dismiss="modal">Close</a>
+                </div>
+            </div>
+            </div>
+        <!-- /Modal -->
+    </div>
 <% } %>
     </form>
     </div>
-    
+
     </div>
 
 

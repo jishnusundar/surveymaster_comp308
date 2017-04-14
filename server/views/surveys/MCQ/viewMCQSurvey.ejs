@@ -2,22 +2,30 @@
 <!--Author: Amandeep Aujla-->
 <div class="outer-box">
  
- <h3>Share your survey with the following link: surveymaster.herokuapp.com/respond/<%= surveys._id %></h3>
  
-<!--Survey Name(from connfigureSurvey Page-->
+ 
+ 
+<!--Survey Name(from connfigureSurvey Page)-->
     <div class="survey-container">
-    <h3><%= surveys.title %></h3><!--dynamic data-->
-    
+
+    <!--Survey Title-->
+    <div class="page-header">
+    <h1><%= surveys.title %></h1><!--dynamic data-->
+    </div>
+
+    <!--Home Link-->
+    <ol class="breadcrumb">
+    <li><a href="/survey/userSurveyList">Home</a></li>
+    <li class="active">View Survey</a></li>
+    </ol>
+
+    <div class="alert alert-info" role="alert">
+    Share your survey with the following link:
+    <a href="#" class="alert-link">surveymaster.herokuapp.com/respond/<%= surveys._id %></a>
+    </div>
 
     <form method="post">
-  <!--Go Back Button-->
-        <div class="survey-form-list-control">
-        <div class="survey-form-list-control-button">
-         
-         <a class="btn btn-default" href="/survey/userSurveyList" role="button">My Home</a>
-        </div>
-        
-        </div>
+       
     <!--Question 1-->
     <div class="question-break">
             <div class="survey-form-list-control">
@@ -359,13 +367,6 @@
 
     </div>
 
-      <div class="survey-form-list-control">
-       <div class="survey-form-list-control-button">
-         
-         <a class="btn btn-default" href="/survey/userSurveyList" role="button">My Home</a>
-        </div>
-        
-        </div>
         </form>
       </div>
       
