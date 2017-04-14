@@ -9,6 +9,9 @@ let passport = require('passport');
 let UserModel = require('../models/users')
 let User = UserModel.User;
 
+//modules for contactUs emailer
+'use strict';
+const nodemailer = require('nodemailer');
 
 //Get the home page and render the login form
 router.get('/',(req,res,next) => {
@@ -27,6 +30,36 @@ router.get('/contactUs',(req,res,next) => {
         user:req.user?req.user.username:'',
         messages:''
     });
+   
+});
+
+router.post('/contactUs',(req,res,next) => {
+  
+  // create reusable transporter object using the default SMTP transport
+let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'surveymaster.team07@gmail.com',
+        pass: 'Surveymaster07'
+    }
+});
+
+// setup email data with unicode symbols
+let mailOptions = {
+    from: 'jishnusundar423@gmail.com', // sender address
+    to: 'surveymaster.team07@gmail.com', // list of receivers
+    subject: 'Contact Requested by a visitor', // Subject line
+    text: 'Contact Requested by a visitor', // plain text body
+    html: '<b>Hello world</b>' // html body
+};
+
+// send mail with defined transport object
+transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+        return console.log(error);
+    }
+    console.log('Message %s sent: %s', info.messageId, info.response);
+});
    
 });
 
