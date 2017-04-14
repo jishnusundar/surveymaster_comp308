@@ -379,6 +379,22 @@ p{
 .button-color{
      color:rgba(145, 145, 145, 1);
 }
+.about-images{
+    width: 140px;
+    height: 140px;
+    margin-top: 2%;
+     margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 2%;
+}
+.about-images:hover{
+box-shadow: -5px 9px 36px 3px grey ;
+
+}
+.about-caption{
+  margin-left: 20%;
+    margin-right: 20%;
+}
 
 .narrow-form-container{
     margin-left:30%;
