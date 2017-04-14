@@ -20,6 +20,15 @@ router.get('/',(req,res,next) => {
    
 });
 
+//Get the Contact page and render the login form
+router.get('/contactUs',(req,res,next) => {
+   res.render('contactUs',{
+        title:"Contact Us",
+        user:req.user?req.user.username:'',
+        messages:''
+    });
+   
+});
 
 
 
