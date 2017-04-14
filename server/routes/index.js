@@ -30,6 +30,16 @@ router.get('/contactUs',(req,res,next) => {
    
 });
 
+//Get the Contact page and render the login form
+router.get('/aboutus',(req,res,next) => {
+   res.render('aboutus',{
+        title:"About us",
+        user:req.user?req.user.username:'',
+        messages:''
+    });
+   
+});
+
 
 
 module.exports = router;
