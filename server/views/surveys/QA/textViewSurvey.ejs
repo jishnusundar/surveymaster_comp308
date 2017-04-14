@@ -5,7 +5,7 @@
  
 <!--Survey Name(from connfigureSurvey Page-->
     <div class="survey-container">
-    <h3>surveys.title</h3><!--dynamic data-->
+    <h3><%= surveys.title%> </h3><!--dynamic data-->
 
     <form method="post">
 
@@ -19,7 +19,7 @@
             <!--Label-->
             <div class="survey-form-list-control">
             <div class="survey-form-list-control-label" >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. In eaque odit, quo ex!
+            <% surveys.questions.q1 %>
             </div>
         </div>
 
@@ -42,8 +42,8 @@
             <!--Label-->
             <div class="survey-form-list-control">
             <div class="survey-form-list-control-label" >
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab id saepe dolores voluptas distinctio officia officiis doloribus nam dolorem!
-            </div>
+           <% surveys.questions.q2 %>
+           </div>
         </div>
 
          <!--Text area-->
@@ -65,7 +65,7 @@
             <!--Label-->
             <div class="survey-form-list-control">
             <div class="survey-form-list-control-label" >
-             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam itaque quis, voluptas.
+             <% surveys.questions.q3 %>
             </div>
 
          <!--Text area-->
@@ -87,7 +87,7 @@
             <!--Label-->
             <div class="survey-form-list-control">
             <div class="survey-form-list-control-label" >
-           Lorem ipsum dolor.
+           <% surveys.questions.q4 %>
             </div>
         </div>
 
@@ -110,7 +110,7 @@
             <!--Label-->
             <div class="survey-form-list-control">
             <div class="survey-form-list-control-label" >
-             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quasi, mollitia eligendi tempora consectetur pariatur quisquam possimus saepe, at modi, fugit quas repudiandae.
+              <% surveys.questions.q5 %>
             </div>
         </div>
 
@@ -133,7 +133,7 @@
             <!--Label-->
             <div class="survey-form-list-control">
             <div class="survey-form-list-control-label" >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita id, nobis eaque.
+            <% surveys.questions.q6 %>
             </div>
         </div>
 
@@ -156,7 +156,7 @@
             <!--Label-->
             <div class="survey-form-list-control">
             <div class="survey-form-list-control-label" >
-           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque labore, assumenda quidem aperiam similique.
+            <% surveys.questions.q7 %>            
             </div>
         </div>
 
@@ -179,7 +179,7 @@
             <!--Label-->
             <div class="survey-form-list-control">
             <div class="survey-form-list-control-label" >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ut vel quibusdam voluptates, commodi nihil quam provident pariatur. Eos molestias, numquam.
+             <% surveys.questions.q8 %>
             </div>
         </div>
 
@@ -202,7 +202,7 @@
             <!--Label-->
             <div class="survey-form-list-control">
             <div class="survey-form-list-control-label" >
-            Lorem ipsum dolor sit amet, consectetur.
+             <% surveys.questions.q9 %>
             </div>
         </div>
 
@@ -225,7 +225,7 @@
             <!--Label-->
             <div class="survey-form-list-control">
             <div class="survey-form-list-control-label" >
-           Lorem ipsum dolor sit amet, consectetur adipisicing.
+            <% surveys.questions.q10 %>
             </div>
         </div>
 
@@ -240,8 +240,8 @@
 
         <div class="survey-form-list-control">
        <div class="survey-form-list-control-button">
-         <input type="submit" class="btn btn-default" value="Next">
-         <a class="btn btn-default" href="/survey/userSurveyList" role="button">Cancel</a>
+         
+         <a class="btn btn-default" href="/survey/userSurveyList" role="button">Go to My Survey Page</a>
         </div>
       </div>
       
