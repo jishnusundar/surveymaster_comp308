@@ -76,6 +76,10 @@ router.get('/viewMCQSurvey/:id',requireAuth,(req,res,next) => {
 surveysController.viewMCQSurvey(req,res,next,req.params.id);
 });
 
+router.get('/QaSurveyTemplate',requireAuth,(req,res,next)=> {
+  surveysController.displayQaSurveyTemplate(req,res,next);
+})
+
 router.get('/confirmSurvey',requireAuth,(req,res,next)=>{
    surveysController.displaySurveyConfirmation(req,res,next);
 });

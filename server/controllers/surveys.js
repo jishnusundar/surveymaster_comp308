@@ -50,7 +50,7 @@ else if(type == "True or False")
 
 else if(type == "Q&A") 
 {
-
+ return res.redirect('/survey/QaSurveyTemplate');
 }
 
 else 
@@ -568,4 +568,14 @@ module.exports.identifySurveyToEdit = (req,res,next) => {
       console.log(err);
       res.redirect('/errors/404');
     }
+}
+
+module.exports.displayQaSurveyTemplate = (req,res,next) => {
+      return res.render('surveys/QA/textSurveyTemplate',{
+     title:'Customize your survey',
+     user:req.user?req.user.username:'',
+     surveyTitle: req.session.surveyTitle,
+     surveys:''
+
+   });
 }
