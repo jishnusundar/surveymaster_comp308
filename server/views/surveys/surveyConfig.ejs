@@ -4,47 +4,40 @@
     <div class="survey-container">
 
     <div class="page-header">
-    <h3>Setup Survey</h3>
+    <h1>Setup Survey</h1>
     </div>
 
     <div class="narrow-form-container">
     <form method="post">
     
-            <!--List 1-->
+            <!--Survey Name-->
             <div class="survey-form-list-control">
-                <div class="col-md-6"><label>Survey Name</label></div>
-                <div class="col-md-6">
-                <input name="surveyTitle" type = "text" class ="form-control">
-                </div>
-            </div>
-            <br><br>
-            <!--List 2-->
-            <div class="survey-form-list-control">
-                    <div class="col-md-6">Choose Type</div>
-                            <div class="col-md-6">
-                                <select name ="surveyType" class="form-control survey-form-list-control" id="sel1">
-                                <option > Select Type</option>
-                                <option value="Multiple Choice"> Multiple Choice</option>
-                                <option value="True or False">True or False</option>
-                                <option value="Q&A">Q&A</option>
-                                </select>
-                            </div>
+                <label>Survey Name</label>
+                <input name="surveyTitle" type = "text" class ="form-control" required>
             </div>
 
-            <!--List 3-->
+            <!--Survey Type-->
             <div class="survey-form-list-control">
-                <div class="col-md-6">Expiry Date</div>
-                    <div class="col-md-6">
-                    <input name="lifeTime" type = "text" placeholder="MM DD YYYY" class ="form-control">
-                    </div>
-                     
-                <div>
+                    <label>Choose Type</label>
+                    <select name ="surveyType" class="form-control survey-form-list-control" id="sel1" required>
+                    <option > Select Type</option>
+                    <option value="Multiple Choice"> Multiple Choice</option>
+                    <option value="True or False">True or False</option>
+                    <option value="Q&A">Q&A</option>
+                    </select>
+            </div>
+
+            <!--Survey Expiry Date-->
+            <div class="survey-form-list-control">
+               <label>Expiry Date</label>
+               <input name="lifeTime" type ="date" placeholder="MM/DD/YYYY" class ="form-control" required>
            </div>
 
-            <div class="survey-form-list-control">
-                <div class="survey-form-list-control-buttons"> 
-                <input type = "submit" class ="form-control btn btn-default right-position survey-form-list-control-buttons" value="Next">
-                </div>
+            <div class="survey-form-list-control text-right"> 
+                <input type="submit" class ="btn btn-info" value="Next">
+                <a href="/survey/userSurveyList">
+                 <input type="button" class ="btn btn-info" value="Back">
+                 </a>
             </div>
     
         </form>
