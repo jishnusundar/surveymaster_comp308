@@ -361,7 +361,12 @@ p{
 .question-break:hover{
     background-color: #bddbfa;
 }
-
+.normal-break{
+     padding: 10px;
+    background-color: #f1f1f1;
+    margin-bottom: 2%;
+    border-radius: 5px;
+}
 .my-div-hover:hover{
  background-color: #bddbfa;
 }
@@ -378,4 +383,6 @@ p{
 .narrow-form-container{
     margin-left:30%;
     margin-right:30%;
+    margin-top: 5%;
+    margin-bottom:5%;
 }
