@@ -61,6 +61,12 @@ transporter.sendMail(mailOptions, (error, info) => {
     console.log('Message %s sent: %s', info.messageId, info.response);
 });
    
+  setTimeout(redirectHome,2000);
+
+        function redirectHome() {
+          return res.redirect('/');
+        }
+
 });
 
 //Get the Contact page and render the login form
