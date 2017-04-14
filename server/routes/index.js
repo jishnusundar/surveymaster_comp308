@@ -46,11 +46,11 @@ let transporter = nodemailer.createTransport({
 
 // setup email data with unicode symbols
 let mailOptions = {
-    from: 'jishnusundar423@gmail.com', // sender address
+    from: req.body.contactemail, // sender address
     to: 'surveymaster.team07@gmail.com', // list of receivers
     subject: 'Contact Requested by a visitor', // Subject line
     text: 'Contact Requested by a visitor', // plain text body
-    html: '<b>Hello world</b>' // html body
+    html: '<b>Name: </b> <p>'+req.body.contactname+' </p> <br> <b>Email: </b> <p>'+ req.body.contactemail+' </p> <br> <b>Message: </b> <p>'+ req.body.message+' </p> <br>' // html body
 };
 
 // send mail with defined transport object
