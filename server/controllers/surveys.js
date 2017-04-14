@@ -81,7 +81,7 @@ module.exports.processMCQSurvey = (req,res,next) => {
              "author": req.user._id,
              "type":"MCQ",
              "lifetime": req.session.lifeTime,
-             "created": moment().format('MM DD YYYY'),
+             "created": moment().format('MM/DD/YYYY'),
              "questions": {
                  "q1":req.body.q1,
                  "q1o1":req.body.q1o1,
@@ -218,7 +218,7 @@ module.exports.processTFSurvey = (req,res,next) => {
              "author": req.user._id,
              "type":"TF",
              "lifetime": req.session.lifeTime,
-             "created": moment().format('MM DD YYYY'),
+             "created": moment().format('MM/DD/YYYY'),
              "questions": {
                  "q1":req.body.q1,
                  

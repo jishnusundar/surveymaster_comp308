@@ -19,7 +19,7 @@ module.exports.displayMCQResponsePage = (req,res,next,id) => {
 
           
 
-      if(moment(surveys.lifetime).isAfter(moment().format('MM DD YYYY'))){ //if survey not expired
+      if(moment(surveys.lifetime).isAfter(moment().format('MM/DD/YYYY'))){ //if survey not expired
                   // show the survey's response view
         return res.render('surveys/MCQ/respondMCQ',{
         title: 'Respond to survey',
@@ -134,7 +134,7 @@ module.exports.displayTfResponsePage = (req,res,next) => {
 
           
 
-      if(moment(surveys.lifetime).isAfter(moment().format('MM DD YYYY'))){ //if survey not expired
+      if(moment(surveys.lifetime).isAfter(moment().format('MM/DD/YYYY'))){ //if survey not expired
                   // show the survey's response view
         return res.render('surveys/TF/respondTf',{
         title: 'Respond to survey',
