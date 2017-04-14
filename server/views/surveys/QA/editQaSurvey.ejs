@@ -5,20 +5,7 @@
  
 <!--Survey Name(from connfigureSurvey Page-->
     <div class="survey-container">
-    <h3><%= surveys.title%> </h3><!--dynamic data-->
-
-     <!--Home Link-->
-    <ol class="breadcrumb">
-    <li><a href="/survey/userSurveyList">My Survey List</a></li>
-    <li class="active">View Survey</a></li>
-    </ol>
-
-
-
-    <div class="alert alert-info" role="alert">
-    Share your survey with the following link:
-    <a href="#" class="alert-link">surveymaster.herokuapp.com/respond/identifyResponseType/<%= surveys._id %></a>
-    </div>
+    <h3><%= surveys.title %> </h3><!--dynamic data-->
 
     <form method="post">
 
@@ -31,16 +18,12 @@
 
             <!--Label-->
             <div class="survey-form-list-control">
-            <div class="survey-form-list-control-label" >
-            <%= surveys.questions.q1 %>
-            </div>
+
+            <input type="text" class="form-control"  value = "<%= surveys.questions.q1 %>" name = "q1" required>
+
         </div>
 
-        <!--Text area-->
-            <div class="survey-form-list-control">
-            <textarea class="form-control" rows="3"></textarea>
-        <!--/Text area-->
-        </div>
+
 
      <!--/Question1-->
     </div>
@@ -54,16 +37,10 @@
 
             <!--Label-->
             <div class="survey-form-list-control">
-            <div class="survey-form-list-control-label" >
-           <%= surveys.questions.q2 %>
-           </div>
+
+           <input type="text" class="form-control"  value = "<%= surveys.questions.q2 %>" name = "q2" required>
         </div>
 
-         <!--Text area-->
-            <div class="survey-form-list-control">
-            <textarea class="form-control" rows="3"></textarea>
-        <!--/Text area-->
-        </div>
 
      <!--/Question2-->
     </div>
@@ -77,15 +54,9 @@
 
             <!--Label-->
             <div class="survey-form-list-control">
-            <div class="survey-form-list-control-label" >
-             <%= surveys.questions.q3 %>
-            </div>
+             <input type="text" class="form-control"  value = "<%= surveys.questions.q3 %>" name = "q3" required>
 
-         <!--Text area-->
-            <div class="survey-form-list-control">
-            <textarea class="form-control" rows="3"></textarea>
-        <!--/Text area-->
-             </div>
+
         </div>
      <!--/Question3-->
     </div>
@@ -99,16 +70,10 @@
 
             <!--Label-->
             <div class="survey-form-list-control">
-            <div class="survey-form-list-control-label" >
-           <%= surveys.questions.q4 %>
-            </div>
+           <input type="text" class="form-control"  value = "<%= surveys.questions.q4 %>" name = "q4" required>
         </div>
 
-        <!--Text area-->
-            <div class="survey-form-list-control">
-            <textarea class="form-control" rows="3"></textarea>
-        <!--/Text area-->
-        </div>
+
 
      <!--/Question4-->
     </div>
@@ -122,16 +87,10 @@
 
             <!--Label-->
             <div class="survey-form-list-control">
-            <div class="survey-form-list-control-label" >
-              <%= surveys.questions.q5 %>
-            </div>
+              <input type="text" class="form-control"  value = "<%= surveys.questions.q5 %>" name = "q5" required>
         </div>
 
-        <!--Text area-->
-            <div class="survey-form-list-control">
-            <textarea class="form-control" rows="3"></textarea>
-        <!--/Text area-->
-        </div>
+
 
      <!--/Question5-->
     </div>
@@ -145,16 +104,10 @@
 
             <!--Label-->
             <div class="survey-form-list-control">
-            <div class="survey-form-list-control-label" >
-            <%= surveys.questions.q6 %>
-            </div>
+            <input type="text" class="form-control"  value = "<%= surveys.questions.q6 %>" name = "q6" required>
         </div>
 
-        <!--Text area-->
-            <div class="survey-form-list-control">
-            <textarea class="form-control" rows="3"></textarea>
-        <!--/Text area-->
-        </div>
+
 
      <!--/Question6-->
     </div>
@@ -168,16 +121,10 @@
 
             <!--Label-->
             <div class="survey-form-list-control">
-            <div class="survey-form-list-control-label" >
-            <%= surveys.questions.q7 %>            
-            </div>
+            <input type="text" class="form-control"  value = "<%= surveys.questions.q7 %>" name = "q7" required>    
         </div>
 
-       <!--Text area-->
-            <div class="survey-form-list-control">
-            <textarea class="form-control" rows="3"></textarea>
-        <!--/Text area-->
-        </div>
+
 
      <!--/Question7-->
     </div>
@@ -191,16 +138,10 @@
 
             <!--Label-->
             <div class="survey-form-list-control">
-            <div class="survey-form-list-control-label" >
-             <%= surveys.questions.q8 %>
-            </div>
+             <input type="text" class="form-control"  value = "<%= surveys.questions.q8 %>" name = "q8" required>
         </div>
 
-        <!--Text area-->
-            <div class="survey-form-list-control">
-            <textarea class="form-control" rows="3"></textarea>
-        <!--/Text area-->
-        </div>
+
 
      <!--/Question8-->
     </div>
@@ -214,16 +155,10 @@
 
             <!--Label-->
             <div class="survey-form-list-control">
-            <div class="survey-form-list-control-label" >
-             <%= surveys.questions.q9 %>
-            </div>
+             <input type="text" class="form-control"  value = "<%= surveys.questions.q9 %>" name = "q9" required>
         </div>
 
-      <!--Text area-->
-            <div class="survey-form-list-control">
-            <textarea class="form-control" rows="3"></textarea>
-        <!--/Text area-->
-        </div>
+
 
      <!--/Question9-->
     </div>
@@ -237,26 +172,22 @@
 
             <!--Label-->
             <div class="survey-form-list-control">
-            <div class="survey-form-list-control-label" >
-            <%= surveys.questions.q10 %>
-            </div>
+            <input type="text" class="form-control"  value = "<%= surveys.questions.q10 %>" name = "q10" required>
         </div>
 
-       <!--Text area-->
-            <div class="survey-form-list-control">
-            <textarea class="form-control" rows="3"></textarea>
-        <!--/Text area-->
-        </div>
+      
 
         </div>
          <!--/Question10-->
 
-        <div class="survey-form-list-control">
-       <div class="survey-form-list-control-button">
-         
-         <a class="btn btn-default" href="/survey/userSurveyList" role="button">Go to My Survey Page</a>
-        </div>
-      </div>
+         <!-- BUTTON-->
+    <div class="survey-form-list-control">
+     <div class="survey-form-list-control-listNum">
+         <input type="submit" class="btn btn-default" value="Save Survey">
+         <a class="btn btn-default" href="/survey/userSurveyList" role="button">Cancel</a>
+    </div>
+    </div>
+    <!-- /BUTTON-->
       
 
     </div>

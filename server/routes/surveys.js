@@ -84,6 +84,14 @@ router.post('/QaSurveyTemplate',requireAuth,(req,res,next)=> {
   surveysController.processQASurvey(req,res,next);
 });
 
+router.get('/editQASurvey/:id',(req,res,next)=> {
+surveysController.displayQAEditPage(req,res,next);
+});
+
+router.post('/editQASurvey/:id',(req,res,next)=> {
+surveysController.editQaSurvey(req,res,next);
+});
+
 router.get('/confirmSurvey',requireAuth,(req,res,next)=>{
    surveysController.displaySurveyConfirmation(req,res,next);
 });

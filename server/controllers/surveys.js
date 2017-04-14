@@ -579,7 +579,7 @@ module.exports.identifySurveyToEdit = (req,res,next) => {
 
         } 
         else if(surveys.type=="QA") {
-          res.end();
+           return res.redirect('/survey/editQASurvey/'+surveyId);
           }
           
         }
@@ -651,6 +651,75 @@ module.exports.processQASurvey = (req,res,next) => {
       } else {
           console.log("Survey created successfully");
         return res.redirect('/survey/textViewSurvey/'+mcqSurvey._id);
+      }
+    });
+}
+
+module.exports.displayQAEditPage = (req,res,next)=> {
+      try {
+      // get a reference to the id from the url
+      let surveyId = mongoose.Types.ObjectId.createFromHexString(req.params.id);
+
+        // find one survey by its id
+      survey.findById(surveyId, (err, surveys) => {
+        if(err) {
+          console.log(err);
+          return res.end(error);
+        } else {
+          // show the survey's detailed view
+return res.render('surveys/QA/editQaSurvey',{
+        title:'Edit Survey',
+        user:req.user?req.user.username:'',
+        surveys: surveys,
+         surveyTitle: ''
+});
+        }
+      });
+    } catch (err) {
+      console.log(err);
+      res.redirect('/errors/404');
+    }
+}
+
+module.exports.editQaSurvey = (req,res,next) => {
+  // get a reference to the id from the url
+    let surveyId = req.params.id;
+     let updatedSurvey = survey({
+             "_id": surveyId,
+             "title": req.body.surveyTitle,
+             "questions": {
+                 "q1":req.body.q1,
+
+                 "q2":req.body.q2,
+
+                 "q3":req.body.q3,
+                 
+                 "q4":req.body.q4,
+                 
+                 "q5":req.body.q5,
+                 
+                 "q6":req.body.q6,
+                 
+                 "q7":req.body.q7,
+                 
+                 "q8":req.body.q8,
+                 
+                 "q9":req.body.q9,
+                 
+                 "q10":req.body.q10,
+
+             }
+
+
+    });
+
+    survey.update({_id: surveyId}, updatedSurvey, (err) => {
+      if(err) {
+        console.log(err);
+       return res.end(err);
+      } else {
+        // refresh the survey List
+      return  res.redirect('/survey/userSurveyList');
       }
     });
 }

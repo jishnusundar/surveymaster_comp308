@@ -25,4 +25,12 @@ router.post('/respondTF/:id', (req,res,next)=> {
     respondController.processTfResponse(req,res,next);
 });
 
+router.get('/respondQA/:id',(req,res,next)=>{
+respondController.displayQAResponsePage(req,res,next);
+});
+
+router.post('/respondQA/:id',(req,res,next)=>{
+respondController.processQAResponse(req,res,next);
+});
+
 module.exports = router;
