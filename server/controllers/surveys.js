@@ -300,10 +300,30 @@ module.exports.displayTextSurveyTemplate = (req,res,next) => {
 }
 
 module.exports.textViewSurvey = (req,res,next) => {
-    return res.render('surveys/QA/textViewSurvey',{
-        title:'Your survey',
-        user:req.user?req.user.username:''
-    });
+
+
+     try {
+      // get a reference to the id from the url
+      let surveyId = mongoose.Types.ObjectId.createFromHexString(req.params.id);
+
+        // find one survey by its id
+      survey.findById(surveyId, (err, surveys) => {
+        if(err) {
+          console.log(err);
+          return res.end(error);
+        } else {
+          // show the survey's detailed view
+return res.render('surveys/QA/textViewSurvey',{
+        title:'View Survey',
+        user:req.user?req.user.username:'',
+        surveys: surveys
+});
+        }
+      });
+    } catch (err) {
+      console.log(err);
+      res.redirect('/errors/404');
+    }
 }
 
 module.exports.displaMCQEditPage =(req,res,next,id) => {
@@ -528,7 +548,7 @@ module.exports.identifySurveyAndRedirect = (req,res,next) => {
 
         } 
         else if(surveys.type=="QA") {
-          res.end();
+         return res.redirect('/survey/textViewSurvey/'+surveyId);
           }
           
         }
@@ -578,4 +598,59 @@ module.exports.displayQaSurveyTemplate = (req,res,next) => {
      surveys:''
 
    });
+}
+
+module.exports.processQASurvey = (req,res,next) => {
+
+          let newSurvey = survey({
+             "title": req.session.surveyTitle,
+             "author": req.user._id,
+             "type":"QA",
+             "lifetime": req.session.lifeTime,
+             "created": moment().format('MM/DD/YYYY'),
+             "questions": {
+                 "q1":req.body.q1,
+                
+
+                 "q2":req.body.q2,
+                
+
+                 "q3":req.body.q3,
+                
+
+                 "q4":req.body.q4,
+               
+
+                 "q5":req.body.q5,
+               
+
+                 "q6":req.body.q6,
+                
+
+                 "q7":req.body.q7,
+                
+
+                  "q8":req.body.q8,
+                
+
+                 "q9":req.body.q9,
+               
+
+                  "q10":req.body.q10,
+                
+
+             }
+
+
+    });
+
+    survey.create(newSurvey, (err, mcqSurvey) => {
+      if(err) {
+        console.log("ERROR creating survey!!!: "+err);
+       return res.end(err);
+      } else {
+          console.log("Survey created successfully");
+        return res.redirect('/survey/textViewSurvey/'+mcqSurvey._id);
+      }
+    });
 }

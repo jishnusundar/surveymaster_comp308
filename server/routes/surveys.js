@@ -44,9 +44,9 @@ router.get('/textSurveyTemplate',requireAuth,(req,res,next) => {
 surveysController.displayTextSurveyTemplate(req,res,next);
 });
 
-router.get('/textViewSurvey',requireAuth,(req,res,next) => {
+router.get('/textViewSurvey/:id',requireAuth,(req,res,next) => {
   surveysController.textViewSurvey(req,res,next);
-})
+});
 
 router.get('/MCQSurveyTemplate',requireAuth,(req,res,next) => {
   surveysController.displayMCQSurveyTemplate(req,res,next);
@@ -78,7 +78,11 @@ surveysController.viewMCQSurvey(req,res,next,req.params.id);
 
 router.get('/QaSurveyTemplate',requireAuth,(req,res,next)=> {
   surveysController.displayQaSurveyTemplate(req,res,next);
-})
+});
+
+router.post('/QaSurveyTemplate',requireAuth,(req,res,next)=> {
+  surveysController.processQASurvey(req,res,next);
+});
 
 router.get('/confirmSurvey',requireAuth,(req,res,next)=>{
    surveysController.displaySurveyConfirmation(req,res,next);
