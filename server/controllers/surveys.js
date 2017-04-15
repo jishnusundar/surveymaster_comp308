@@ -45,7 +45,7 @@ if(type == "Multiple Choice")
 
   return res.redirect('/survey/MCQSurveyTemplate');
 }
-else if(type == "True or False")
+else if(type == "Agree/Disagree")
 {
   return res.redirect('/survey/tfSurveyTemplate');
 }
