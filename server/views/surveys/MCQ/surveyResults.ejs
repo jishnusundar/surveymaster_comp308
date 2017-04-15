@@ -1,4 +1,4 @@
-<% include ../../partials/header.ejs %>
+<% include ../partials/header.ejs %>
 <div class="outer-box">
 
 <!--Survey Name(from connfigureSurvey Page)-->
@@ -6,7 +6,7 @@
 
     <!--Survey Title-->
     <div class="page-header">
-    <h1><%= survey.title %></h1><!--dynamic data-->
+    <h1>surveys.title</h1><!--dynamic data-->
     </div>
 
     <!--Home Link-->
@@ -14,20 +14,82 @@
     <li><a href="/survey/userSurveyList">My Survey List</a></li>
     <li class="active">Survey Results</a></li>
     </ol>
-
-
-
+    
     <!-- Question 1 TABLE-->
+    <div class="survey-form-list-control">
+        <div class="survey-form-list-control-listNum" >
+        <b>Question 1.</b>
+        </div>
+        <div class="survey-form-list-control-buttons right-position">
+         <span class="caret" data-toggle="collapse" data-target="#table1" aria-expanded="false" aria-controls="collapseExample"></span>
+        </div>
+    </div>
+
+     <div class="survey-form-list-control">
+        <div class="survey-form-list-control-listNum">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa assumenda ea officiis?
+        </div>
+        
+    </div>
+    
+    <div class="collapse" id="table1">
     <table class="table table-condensed">
-    <tr>
-    <th class="info">Question 1</th>
+    <tr class="info">
+    <th>Options</th>
+    <th>Number of Hits</th>
+    <th>Average</th>
+    <th>%</th>
     </tr>
 
     <tr>
-    <th class="info"><%= survey.questions.q1 %></th>
+    <td>Option A value</td>
+    <td></td>
+    <td></td>
+     <td></td>
     </tr>
 
     <tr>
+    <td>Option B </td>
+    <td></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+    <tr>
+    <td>Option C</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+    <tr>
+    <td>Option D</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    </tr>
+    </table>
+    </div>
+
+     <!-- Question 2 TABLE-->
+     <div class="survey-form-list-control">
+        <div class="survey-form-list-control-listNum" >
+        <b>Question 2.</b>
+        </div>
+        <div class="survey-form-list-control-buttons right-position">
+         <span class="caret"></span>
+        </div>
+    </div>
+
+     <div class="survey-form-list-control">
+        <div class="survey-form-list-control-listNum">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa assumenda ea officiis?
+        </div>
+        
+    </div>
+    
+    <table class="table table-condensed">
+    <tr class="info">
     <th>Options</th>
     <th>Number of Hits</th>
     <th>Average</th>
@@ -64,64 +126,25 @@
 
     </table>
 
-    <!-- Question 2 TABLE-->
+     <!-- Question 3 TABLE-->
+    <div class="survey-form-list-control">
+        <div class="survey-form-list-control-listNum" >
+        <b>Question 3.</b>
+        </div>
+        <div class="survey-form-list-control-buttons right-position">
+         <span class="caret"></span>
+        </div>
+    </div>
+
+     <div class="survey-form-list-control">
+        <div class="survey-form-list-control-listNum">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa assumenda ea officiis?
+        </div>
+        
+    </div>
+    
     <table class="table table-condensed">
-    <tr>
-    <th class="info">Question 2</th>
-    </tr>
-
-    <tr>
-    <th class="info"><%= survey.questions.q2 %></th>
-    </tr>
-
-    <tr>
-    <th>Options</th>
-    <th>Number of Hits</th>
-    <th>Average</th>
-    <th>%</th>
-    </tr>
-
-    <tr>
-    <td>Option A value</td>
-    <td></td>
-    <td></td>
-   <td></td>
-    </tr>
-
-    <tr>
-    <td>Option B </td>
-    <td></td>
-    <td></td>
-    <td></td>
-    </tr>
-
-    <tr>
-    <td>Option C</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    </tr>
-
-    <tr>
-    <td>Option D</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    </tr>
-
-    </table>
-
-        <!-- Question 3 TABLE-->
-    <table class="table table-condensed">
-    <tr>
-    <th class="info">Question 3</th>
-    </tr>
-
-    <tr>
-    <th class="info"><%= survey.questions.q3 %></th>
-    </tr>
-
-    <tr>
+    <tr class="info">
     <th>Options</th>
     <th>Number of Hits</th>
     <th>Average</th>
@@ -159,16 +182,24 @@
     </table>
 
     <!-- Question 4 TABLE-->
+    <div class="survey-form-list-control">
+        <div class="survey-form-list-control-listNum" >
+        <b>Question 4.</b>
+        </div>
+        <div class="survey-form-list-control-buttons right-position">
+         <span class="caret"></span>
+        </div>
+    </div>
+
+     <div class="survey-form-list-control">
+        <div class="survey-form-list-control-listNum">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa assumenda ea officiis?
+        </div>
+        
+    </div>
+    
     <table class="table table-condensed">
-    <tr>
-    <th class="info">Question 4</th>
-    </tr>
-
-    <tr>
-    <th class="info"><%= survey.questions.q4 %></th>
-    </tr>
-
-    <tr>
+    <tr class="info">
     <th>Options</th>
     <th>Number of Hits</th>
     <th>Average</th>
@@ -205,17 +236,25 @@
 
     </table>
 
-    <!-- Question 5 TABLE-->
+     <!-- Question 5 TABLE-->
+    <div class="survey-form-list-control">
+        <div class="survey-form-list-control-listNum" >
+        <b>Question 5.</b>
+        </div>
+        <div class="survey-form-list-control-buttons right-position">
+         <span class="caret"></span>
+        </div>
+    </div>
+
+     <div class="survey-form-list-control">
+        <div class="survey-form-list-control-listNum">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa assumenda ea officiis?
+        </div>
+        
+    </div>
+    
     <table class="table table-condensed">
-    <tr>
-    <th class="info">Question 5</th>
-    </tr>
-
-    <tr>
-    <th class="info"><%= survey.questions.q5 %></th>
-    </tr>
-
-    <tr>
+    <tr class="info">
     <th>Options</th>
     <th>Number of Hits</th>
     <th>Average</th>
@@ -252,205 +291,25 @@
 
     </table>
 
-    <!-- Question 6 TABLE-->
+     <!-- Question 6 TABLE-->
+    <div class="survey-form-list-control">
+        <div class="survey-form-list-control-listNum" >
+        <b>Question 3.</b>
+        </div>
+        <div class="survey-form-list-control-buttons right-position">
+         <span class="caret"></span>
+        </div>
+    </div>
+
+     <div class="survey-form-list-control">
+        <div class="survey-form-list-control-listNum">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa assumenda ea officiis?
+        </div>
+        
+    </div>
+    
     <table class="table table-condensed">
-    <tr>
-    <th class="info">Question 6</th>
-    </tr>
-
-    <tr>
-    <th class="info"><%= survey.questions.q6 %></th>
-    </tr>
-
-    <tr>
-    <th>Options</th>
-    <th>Number of Hits</th>
-    <th>Average</th>
-    <th>%</th>
-    </tr>
-
-    <tr>
-    <td>Option A value</td>
-    <td></td>
-    <td></td>
-   <td></td>
-    </tr>
-
-    <tr>
-    <td>Option B </td>
-    <td></td>
-    <td></td>
-    <td></td>
-    </tr>
-
-    <tr>
-    <td>Option C</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    </tr>
-
-    <tr>
-    <td>Option D</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    </tr>
-
-    </table>
-
-    <!-- Question 7 TABLE-->
-    <table class="table table-condensed">
-    <tr>
-    <th class="info">Question 7</th>
-    </tr>
-
-    <tr>
-    <th class="info"><%= survey.questions.q7 %></th>
-    </tr>
-
-    <tr>
-    <th>Options</th>
-    <th>Number of Hits</th>
-    <th>Average</th>
-    <th>%</th>
-    </tr>
-
-    <tr>
-    <td>Option A value</td>
-    <td></td>
-    <td></td>
-   <td></td>
-    </tr>
-
-    <tr>
-    <td>Option B </td>
-    <td></td>
-    <td></td>
-    <td></td>
-    </tr>
-
-    <tr>
-    <td>Option C</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    </tr>
-
-    <tr>
-    <td>Option D</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    </tr>
-
-    </table>
-
-        <!-- Question 8 TABLE-->
-    <table class="table table-condensed">
-    <tr>
-    <th class="info">Question 8</th>
-    </tr>
-
-    <tr>
-    <th class="info"><%= survey.questions.q8 %></th>
-    </tr>
-
-    <tr>
-    <th>Options</th>
-    <th>Number of Hits</th>
-    <th>Average</th>
-    <th>%</th>
-    </tr>
-
-    <tr>
-    <td>Option A value</td>
-    <td></td>
-    <td></td>
-   <td></td>
-    </tr>
-
-    <tr>
-    <td>Option B </td>
-    <td></td>
-    <td></td>
-    <td></td>
-    </tr>
-
-    <tr>
-    <td>Option C</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    </tr>
-
-    <tr>
-    <td>Option D</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    </tr>
-
-    </table>
-
-    <!-- Question 9 TABLE-->
-    <table class="table table-condensed">
-    <tr>
-    <th class="info">Question 9</th>
-    </tr>
-
-    <tr>
-    <th class="info"><%= survey.questions.q9 %></th>
-    </tr>
-
-    <tr>
-    <th>Options</th>
-    <th>Number of Hits</th>
-    <th>Average</th>
-    <th>%</th>
-    </tr>
-
-    <tr>
-    <td>Option A value</td>
-    <td></td>
-    <td></td>
-   <td></td>
-    </tr>
-
-    <tr>
-    <td>Option B </td>
-    <td></td>
-    <td></td>
-    <td></td>
-    </tr>
-
-    <tr>
-    <td>Option C</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    </tr>
-
-    <tr>
-    <td>Option D</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    </tr>
-
-    </table>
-
-    <!-- Question 10 TABLE-->
-    <table class="table table-condensed">
-    <tr>
-    <th class="info">Question 10</th>
-    </tr>
-
-    <tr>
-    <th class="info"><%= survey.questions.q10 %></th>
-    </tr>
-
-    <tr>
+    <tr class="info">
     <th>Options</th>
     <th>Number of Hits</th>
     <th>Average</th>
@@ -488,11 +347,229 @@
     </table>
 
 
-  
+     <!-- Question 7 TABLE-->
+    <div class="survey-form-list-control">
+        <div class="survey-form-list-control-listNum" >
+        <b>Question 3.</b>
+        </div>
+        <div class="survey-form-list-control-buttons right-position">
+         <span class="caret"></span>
+        </div>
+    </div>
+
+     <div class="survey-form-list-control">
+        <div class="survey-form-list-control-listNum">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa assumenda ea officiis?
+        </div>
+        
+    </div>
+    
+    <table class="table table-condensed">
+    <tr class="info">
+    <th>Options</th>
+    <th>Number of Hits</th>
+    <th>Average</th>
+    <th>%</th>
+    </tr>
+
+    <tr>
+    <td>Option A value</td>
+    <td></td>
+    <td></td>
+   <td></td>
+    </tr>
+
+    <tr>
+    <td>Option B </td>
+    <td></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+    <tr>
+    <td>Option C</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+    <tr>
+    <td>Option D</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+    </table>
 
 
-     
+     <!-- Question 8 TABLE-->
+    <div class="survey-form-list-control">
+        <div class="survey-form-list-control-listNum" >
+        <b>Question 3.</b>
+        </div>
+        <div class="survey-form-list-control-buttons right-position">
+         <span class="caret"></span>
+        </div>
+    </div>
+
+     <div class="survey-form-list-control">
+        <div class="survey-form-list-control-listNum">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa assumenda ea officiis?
+        </div>
+        
+    </div>
+    
+    <table class="table table-condensed">
+    <tr class="info">
+    <th>Options</th>
+    <th>Number of Hits</th>
+    <th>Average</th>
+    <th>%</th>
+    </tr>
+
+    <tr>
+    <td>Option A value</td>
+    <td></td>
+    <td></td>
+   <td></td>
+    </tr>
+
+    <tr>
+    <td>Option B </td>
+    <td></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+    <tr>
+    <td>Option C</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+    <tr>
+    <td>Option D</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+    </table>
+
+
+     <!-- Question 9 TABLE-->
+    <div class="survey-form-list-control">
+        <div class="survey-form-list-control-listNum" >
+        <b>Question 3.</b>
+        </div>
+        <div class="survey-form-list-control-buttons right-position">
+         <span class="caret"></span>
+        </div>
+    </div>
+
+     <div class="survey-form-list-control">
+        <div class="survey-form-list-control-listNum">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa assumenda ea officiis?
+        </div>
+        
+    </div>
+    
+    <table class="table table-condensed">
+    <tr class="info">
+    <th>Options</th>
+    <th>Number of Hits</th>
+    <th>Average</th>
+    <th>%</th>
+    </tr>
+
+    <tr>
+    <td>Option A value</td>
+    <td></td>
+    <td></td>
+   <td></td>
+    </tr>
+
+    <tr>
+    <td>Option B </td>
+    <td></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+    <tr>
+    <td>Option C</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+    <tr>
+    <td>Option D</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+    </table>
+
+     <!-- Question 10 TABLE-->
+    <div class="survey-form-list-control">
+        <div class="survey-form-list-control-listNum" >
+        <b>Question 3.</b>
+        </div>
+        <div class="survey-form-list-control-buttons right-position">
+         <span class="caret"></span>
+        </div>
+    </div>
+
+     <div class="survey-form-list-control">
+        <div class="survey-form-list-control-listNum">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa assumenda ea officiis?
+        </div>
+        
+    </div>
+    
+    <table class="table table-condensed">
+    <tr class="info">
+    <th>Options</th>
+    <th>Number of Hits</th>
+    <th>Average</th>
+    <th>%</th>
+    </tr>
+
+    <tr>
+    <td>Option A value</td>
+    <td></td>
+    <td></td>
+   <td></td>
+    </tr>
+
+    <tr>
+    <td>Option B </td>
+    <td></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+    <tr>
+    <td>Option C</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+    <tr>
+    <td>Option D</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+    </table>
+
     </div>
 
 </div>
-<% include ../../partials/footer.ejs %>
+<% include ../partials/footer.ejs %>
