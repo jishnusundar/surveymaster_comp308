@@ -1,5 +1,7 @@
 //Import model for surveys
 let survey = require('../models/surveys');
+let response = require('../models/response');
+
 let mongoose = require('mongoose');
 var moment = require('moment');
 
@@ -725,8 +727,142 @@ module.exports.editQaSurvey = (req,res,next) => {
 }
 
 module.exports.displaySurveyResponse = (req,res,next) => {
-  return res.render('surveys/surveyResponse',{
-        title:'Survey Response',
-        user:req.user?req.user.username:''
-  });
+
+      try {
+      // get a reference to the id from the url
+      let surveyId = mongoose.Types.ObjectId.createFromHexString(req.params.id);
+
+      let resSurveyId = req.params.id;
+
+//---------------------------------------------------
+
+//---------------------------------------------------
+        // find responses by its surveyId
+      response.find({"surveyId":resSurveyId}, (err, responses) => {
+        if(err) {
+          console.log(err);
+          return res.end(error);
+        } else {
+        //now find the survey to which the reponses belong to
+              survey.findById(surveyId, (err, surveys) => {
+        if(err) {
+          console.log(err);
+          return res.end(error);
+        } else {
+          
+        analyzeMCQSurvey(surveys,responses);
+                    // show the survey's detailed view
+        return res.render('surveys/MCQ/surveyResults',{
+        title:'Survey Result Statistics',
+        user:req.user?req.user.username:'',
+        responses: responses,
+        survey:surveys
+
+});
+        }
+      });
+
+
+        }
+      });
+    } catch (err) {
+      console.log(err);
+      res.redirect('/errors/404');
+    }
+
+
+}
+
+analyzeMCQSurvey = function(survey,responses) {
+var responseCount=0;
+
+foreach( response in responses) { //parent loop, starting with each response
+responseCount++;
+
+switch(response.answers.a1) {
+    case survey.questions.q1o1:
+        code block
+        break;
+    case survey.questions.q1o2:
+        code block
+        break;
+    case survey.questions.q1o3:
+        code block
+        break;
+    case survey.questions.q1o4:
+        code block
+        break;
+    default:
+        code block
+}
+
+}
+
+class MCQAnalysis {
+  constructor(
+  q1o1,q1o2,q1o3,q1o4,
+  q2o1,q2o2,q2o3,q2o4,
+  q3o1,q3o2,q3o3,q3o4,
+  q4o1,q4o2,q4o3,q4o4,
+  q5o1,q5o2,q5o3,q5o4,
+  q6o1,q6o2,q6o3,q6o4,
+  q7o1,q7o2,q7o3,q7o4,
+  q8o1,q8o2,q8o3,q8o4,
+  q9o1,q9o2,q9o3,q9o4,
+  10o1,q10o2,q10o3,q10o4
+  ) {
+    this.q1o1=q1o1;
+    this.q1o2=q1o2;
+    this.q1o3=q1o3;
+    this.q1o4=q1o4;
+
+    this.q2o1=q2o1;
+    this.q2o2=q2o2;
+    this.q2o3=q2o3;
+    this.q2o4=q2o4;
+
+    this.q3o1=q3o1;
+    this.q3o2=q3o2;
+    this.q3o3=q3o3;
+    this.q3o4=q3o4;
+
+    this.q4o1=q4o1;
+    this.q4o2=q4o2;
+    this.q4o3=q4o3;
+    this.q4o4=q4o4;
+
+    this.q5o1=q5o1;
+    this.q5o2=q5o2;
+    this.q5o3=q5o3;
+    this.q5o4=q5o4;
+
+    this.q6o1=q6o1;
+    this.q6o2=q6o2;
+    this.q6o3=q6o3;
+    this.q6o4=q6o4;
+
+    this.q7o1=q7o1;
+    this.q7o2=q7o2;
+    this.q7o3=q7o3;
+    this.q7o4=q7o4;
+
+    this.q8o1=q8o1;
+    this.q8o2=q8o2;
+    this.q8o3=q8o3;
+    this.q8o4=q8o4;
+
+    this.q9o1=q9o1;
+    this.q9o2=q9o2;
+    this.q9o3=q9o3;
+    this.q9o4=q9o4;
+
+    this.q10o1=q10o1;
+    this.q10o2=q10o2;
+    this.q10o3=q10o3;
+    this.q10o4=q10o4;
+  }
+}
+
+
+
 }
