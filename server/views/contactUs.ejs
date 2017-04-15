@@ -2,34 +2,62 @@
 
 
 <div class="outer-box">
+     <script>
+        function validateForm() {
+        var cName = document.forms["contactForm"]["contactname"].value;
+        var eMail = document.forms["contactForm"]["contactemail"].value;
+        var mess = document.forms["contactForm"]["message"].value;
+        if (cName == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+        else
+        if(eMail =="")
+        {
+            alert("Email must be filled out");
+            return false;
+        }
+        else
+        if(mess == "")
+        {
+            alert("Please leave a message");
+            return false;
+        }
+        else{
+            $("#myModal").modal()
+            return true;
+        }
+    }
+    
 
+    </script>
     <div class="survey-container">
     <div class="page-header">
     <h1>Contact Us</h1>
     </div>
 
-        <form method="post">
-
+        <form id="contactForm" onsubmit="return validateForm();" method="post" data-fv-framework="bootstrap" data-fv-icon-valid="glyphicon glyphicon-ok" data-fv-icon-invalid="glyphicon glyphicon-remove" data-fv-icon-validating="glyphicon glyphicon-refresh">
         <div class ="narrow-form-container">
 
                 <div class="survey-form-list-control">
                         <label>Name</label>
-                        <input type="text" class="form-control" placeholder="Enter your name" name = "contactname" required>
+                        <input type="text" class="form-control" placeholder="Enter your name" name = "contactname">
                 </div>
                    
                 <div class="survey-form-list-control">
                         <label>Email</label>
-                        <input type="email" class="form-control" placeholder="Enter your email" name = "contactemail" required>
+                        <input type="email" class="form-control" placeholder="Enter your email" name = "contactemail">
+                        <div class="help-block with-errors"></div>
                 </div>
                     
 
                 <div class="survey-form-list-control">
                         <label>Comments/Leave Message</label>                        
-                         <textarea class="form-control" rows="3" placeholder = "Enter your message" name="message" required></textarea>
+                         <textarea class="form-control" rows="3" placeholder = "Enter your message" name="message"></textarea>
                 </div>
 
                   <div class="survey-form-list-control text-right">
-                        <input type="submit" class="btn btn-info" value="Send" data-toggle="modal" data-target="#myModal">
+                        <input type="submit" class="btn btn-info" value="Send" name="contactSubmitButton" id="contactSubmitButton">
                         <a href="/">
                             <input type="button" class="btn btn-info" value="Cancel"/>
                         </a>
@@ -38,7 +66,7 @@
         </div>
 
          <!-- Modal -->
-        <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal" id="myModal" >
             <div class="modal-dialog">
         
             <!-- Modal content-->
@@ -59,6 +87,7 @@
         <!-- /Modal -->
         </form>
     </div>
+   
 </div>
 
 
