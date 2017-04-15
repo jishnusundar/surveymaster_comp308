@@ -414,4 +414,7 @@ box-shadow: -5px 9px 36px 3px grey ;
     color: #a94442;
 }
 
-    
+.url-class{
+    word-break: break-all;
+    color:#62bcfa;
+}
