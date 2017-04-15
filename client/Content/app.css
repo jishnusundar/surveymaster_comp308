@@ -28,6 +28,7 @@ body{
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
+    z-index: 1;
 }
 
 /* Links inside the navbar */
@@ -417,4 +418,9 @@ box-shadow: -5px 9px 36px 3px grey ;
 .url-class{
     word-break: break-all;
     color:#62bcfa;
+}
+.row-wrapper{
+    margin: 5% 10% 2% 10%;
+    display: inline;
+
 }
