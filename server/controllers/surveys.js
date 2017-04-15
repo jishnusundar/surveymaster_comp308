@@ -728,47 +728,13 @@ module.exports.editQaSurvey = (req,res,next) => {
 
 module.exports.displaySurveyResponse = (req,res,next) => {
 
-      try {
-      // get a reference to the id from the url
-      let surveyId = mongoose.Types.ObjectId.createFromHexString(req.params.id);
-
-      let resSurveyId = req.params.id;
-
-//---------------------------------------------------
-
-//---------------------------------------------------
-        // find responses by its surveyId
-      response.find({"surveyId":resSurveyId}, (err, responses) => {
-        if(err) {
-          console.log(err);
-          return res.end(error);
-        } else {
-        //now find the survey to which the reponses belong to
-              survey.findById(surveyId, (err, surveys) => {
-        if(err) {
-          console.log(err);
-          return res.end(error);
-        } else {
-          
-        analyzeMCQSurvey(surveys,responses);
                     // show the survey's detailed view
         return res.render('surveys/MCQ/surveyResults',{
         title:'Survey Result Statistics',
         user:req.user?req.user.username:'',
-        responses: responses,
-        survey:surveys
+
 
 });
-        }
-      });
-
-
-        }
-      });
-    } catch (err) {
-      console.log(err);
-      res.redirect('/errors/404');
-    }
 
 
 }
