@@ -723,3 +723,10 @@ module.exports.editQaSurvey = (req,res,next) => {
       }
     });
 }
+
+module.exports.displaySurveyResponse = (req,res,next) => {
+  return res.render('surveys/surveyResponse',{
+        title:'Survey Response',
+        user:req.user?req.user.username:''
+  });
+}

@@ -114,4 +114,8 @@ router.get('/delete/:id',requireAuth,(req,res,next) => {
   surveysController.deleteSurvey(req,res,next,req.params.id);
 });
 
+router.get('/surveyResponse',requireAuth,(req,res,next) => {
+  surveysController.displaySurveyResponse(req,res,next);
+});
+
 module.exports = router;
