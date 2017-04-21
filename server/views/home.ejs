@@ -14,13 +14,25 @@
 
     <div class="logo-banner">
 
-        <img src="/Assets/images/logo.png" class="rounded float-left" alt="...">
-      
-            <div class= "txt-description-cont">
-            <p>Ask one person for advice, and it’s hard to know whether we should trust them. Ask a hundred, though, you’ll see a clearer picture start to come together.</p>
-            <p>Survey Master is a web application to build surveys to get your answers anytime. This web application helps the user to create survey according to the requirement and can view the results.</p>
-            <p>Survey Master is a web application to build surveys to get your answers anytime. This web application helps the user to create survey according to the requirement and can view the results.Survey Master is a web application to build surveys to get your answers anytime. This web application helps the user to create survey according to the requirement and can view the results.Survey Master is a web application to build surveys to get your answers anytime. This web application helps the user to create survey according to the requirement and can view the results.Survey Master is a web application to build surveys to get your answers anytime. This web application helps the user to create survey according to the requirement and can view the results.</p>
-            </div>
+    <!--Survey List-->
+    <div class="survey-container">
+    <div class="page-header">
+    <h3>Active Surveys</h3>
+    </div>
+    <form>
+
+    <!--List of surveys-->
+    <% for (let count = 0; count < surveys.length; count++) { sIds[count] = surveys[count]._id %>
+
+    <div class="survey-form-list-control">
+        <div class="survey-form-list-control-listNum"><%= count+1 %></div>
+        
+         <div class="survey-form-list-control-label"><a href="/respond/identifyResponseType/<%= surveys[count]._id %>"><%=   surveys[count].title %</a></div>
+    </div>
+        
+<% } %>
+    </form>
+    </div>
     </div>
      
     
