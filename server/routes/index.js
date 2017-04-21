@@ -9,17 +9,30 @@ let passport = require('passport');
 let UserModel = require('../models/users')
 let User = UserModel.User;
 
+let survey = require('../models/surveys');
+
 //modules for contactUs emailer
 'use strict';
 const nodemailer = require('nodemailer');
 
 //Get the home page and render the login form
 router.get('/',(req,res,next) => {
-   res.render('home',{
-        title:"Welcome to Survey Master",
+
+ survey.find((err, surveys) => {
+    if (err) {
+      return console.error(err);
+    }
+    else {
+     return res.render('home',{
+        title:'Welcome to Survey Master',
         user:req.user?req.user.username:'',
+        surveys: surveys,
         messages:''
     });
+    }
+  });
+
+
    
 });
 
