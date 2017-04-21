@@ -15,6 +15,8 @@ let survey = require('../models/surveys');
 'use strict';
 const nodemailer = require('nodemailer');
 
+var moment = require('moment');
+
 //Get the home page and render the login form
 router.get('/',(req,res,next) => {
 
@@ -23,10 +25,18 @@ router.get('/',(req,res,next) => {
       return console.error(err);
     }
     else {
+        var activeSurveys = [];
+
+        surveys.forEach(function(survey) {
+
+            if(moment(survey.lifetime).isAfter(moment().format('MM/DD/YYYY'))){ //if survey not expired
+               activeSurveys.push(survey)  ; 
+            }
+        });
      return res.render('home',{
         title:'Welcome to Survey Master',
         user:req.user?req.user.username:'',
-        surveys: surveys,
+        surveys: activeSurveys,
         messages:''
     });
     }
