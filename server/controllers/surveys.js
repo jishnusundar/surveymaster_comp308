@@ -364,6 +364,7 @@ let currentDate = new Date();
      let updatedSurvey = survey({
              "_id": surveyId,
              "title": req.body.surveyTitle,
+             "lifetime": req.body.expiry,
              "questions": {
                  "q1":req.body.q1,
                  "q1o1":req.body.q1o1,
@@ -479,6 +480,7 @@ module.exports.processTfEdit = (req,res,next) => {
      let updatedSurvey = survey({
              "_id": surveyId,
              "title": req.body.surveyTitle,
+             "lifetime": req.body.expiry,
              "questions": {
                  "q1":req.body.q1,
                  "q2":req.body.q2,
@@ -689,6 +691,7 @@ module.exports.editQaSurvey = (req,res,next) => {
      let updatedSurvey = survey({
              "_id": surveyId,
              "title": req.body.surveyTitle,
+             "lifetime": req.body.expiry,
              "questions": {
                  "q1":req.body.q1,
 

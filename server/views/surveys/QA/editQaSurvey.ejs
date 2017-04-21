@@ -5,10 +5,16 @@
  
 <!--Survey Name(from connfigureSurvey Page-->
     <div class="survey-container">
-    <h3><%= surveys.title %> </h3><!--dynamic data-->
+    
 
     <form method="post">
-
+<div class="page-header">
+    <h1><%= surveys.title %></h1>
+         <div class="survey-form-list-control-text">
+             <div class="survey-form-list-control-label"><b>Expiry Date</b></div>
+            <input type="text" name="expiry" value="<%= surveys.lifetime %>" >
+         </div>
+    </div>
     <!--Question 1-->
     <div class="question-break">
             <div class="survey-form-list-control">
