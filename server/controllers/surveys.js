@@ -749,7 +749,7 @@ module.exports.downloadResponse = (req,res,next) => {
 
       var responses = JSON.stringify(surveys,null,4);
 
-res.writeHead(200, {'Content-Type': 'application/force-download','Content-disposition':'attachment; filename=Responses.txt'});
+res.writeHead(200, {'Content-Type': 'application/force-download','Content-disposition':'attachment; filename=Responses.doc'});
 setTimeout(endResponse,'2000');
 function endResponse () {
  return res.end( responses );
