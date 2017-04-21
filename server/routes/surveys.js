@@ -118,4 +118,10 @@ router.get('/surveyResponse',requireAuth,(req,res,next) => {
   surveysController.displaySurveyResponse(req,res,next);
 });
 
+
+
+router.get('/downloadResponse/:id',requireAuth,(req,res,next) => {
+  surveysController.downloadResponse(req,res,next);
+});
+
 module.exports = router;

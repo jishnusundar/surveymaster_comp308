@@ -739,3 +739,25 @@ module.exports.displaySurveyResponse = (req,res,next) => {
 
 }
 
+module.exports.downloadResponse = (req,res,next) => {
+
+   response.find( {"surveyId":req.params.id},(err, surveys) => {
+    if (err) {
+      return console.error(err);
+    }
+    else {
+
+      var responses = JSON.stringify(surveys);
+
+res.writeHead(200, {'Content-Type': 'application/force-download','Content-disposition':'attachment; filename=Responses.txt'});
+setTimeout(endResponse,'2000');
+function endResponse () {
+ return res.end( responses );
+}
+
+ //   return res.redirect('/survey/userSurveyList');
+    }
+  });
+
+}
+
